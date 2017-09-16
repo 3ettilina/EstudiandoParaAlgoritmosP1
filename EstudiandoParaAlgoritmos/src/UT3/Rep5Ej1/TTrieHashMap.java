@@ -5,7 +5,7 @@
  */
 package UT3.Rep5Ej1;
 
-import TriesBetti.TNodoTrie;
+import TriesBetti.TNodoTrieHashMap;
 import java.util.LinkedList;
 
 /**
@@ -14,11 +14,11 @@ import java.util.LinkedList;
  */
 public class TTrieHashMap {
 
-    private TNodoTrie raiz;
+    private TNodoTrieHashMap raiz;
 
     public void insertar(String palabra) {
         if (raiz == null) {
-            raiz = new TNodoTrie();
+            raiz = new TNodoTrieHashMap();
         }
         raiz.insertar(palabra);
     }
