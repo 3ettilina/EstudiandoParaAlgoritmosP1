@@ -5,6 +5,7 @@
  */
 package UT3.Rep5Ej1;
 
+import CodigoHash.HashPiola;
 import java.util.LinkedList;
 
 /**
@@ -12,12 +13,11 @@ import java.util.LinkedList;
  * @author Bettina
  */
 public class TNodoTrieHashMap {
-    private static final int CANT_CHR_ABECEDARIO = 26;
-    private TNodoTrieHashMap[] hijos;
-    private boolean esPalabra;
+    private HashPiola[] hijos;
+    
     
     public TNodoTrieHashMap() {
-        hijos = new TNodoTrieHashMap[CANT_CHR_ABECEDARIO];
+        hijos = new HashPiola(23,0.5);
         esPalabra = false;
     }
     
