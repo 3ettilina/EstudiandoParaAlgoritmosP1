@@ -29,7 +29,7 @@ public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
         this.trie           = new TArbolTrie();
        // String[] palabras = {};
         //TODO: CARGAR PALABRAS CON EL LECTOR DE ARCHIVOS GENÉRICO
-        String[] palabras = ManejadorArchivosGenerico.leerArchivo("src/UT02/TA03/palabrasEx.txt");
+        String[] palabras = ManejadorArchivosGenerico.leerArchivo("src/Tries/palabrasEx.txt");
 
         //Insertamos las palabras
         for (String palabra : palabras) {
