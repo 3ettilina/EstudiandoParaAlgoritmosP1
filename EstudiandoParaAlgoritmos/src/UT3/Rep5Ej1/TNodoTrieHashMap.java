@@ -13,10 +13,11 @@ import java.util.LinkedList;
  * @author Bettina
  */
 public class TNodoTrieHashMap {
-    private HashPiola[] hijos;
+    private HashPiola hijos;
+    private 
 
     public TNodoTrieHashMap() {
-        
+        hijos = new HashPiola(cantidasPalabrasArchivo(), 0.5);
         
     }
 
@@ -62,4 +63,9 @@ public class TNodoTrieHashMap {
         this.hijos = hijos;
     }
 //</editor-fold>
+
+    private int cantidasPalabrasArchivo() {
+        String[] palabras = ManejadorArchivosGenerico.leerArchivo("src/palabras.txt");
+        return palabras.length;
+    }
 }
