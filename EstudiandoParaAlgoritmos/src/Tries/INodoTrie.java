@@ -18,6 +18,6 @@ public interface INodoTrie {
     void imprimir();
 
     void insertar(String unaPalabra);
-    public void predecir(String prefijo, LinkedList<String> palabras, TNodoTrie nodo);
+    public void predecir(String prefijo, LinkedList<String> palabras);
     
 }

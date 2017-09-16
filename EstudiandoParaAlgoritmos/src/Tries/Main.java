@@ -1,7 +1,6 @@
 package Tries;
 
 
-
 import java.util.LinkedList;
 
 
@@ -13,7 +12,7 @@ public class Main {
     public static void main(String[] args){
         TArbolTrie trie = new TArbolTrie();
 
-        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("/src/Tries/palabras1.txt");
+        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/palabras1.txt");
         for (String p : palabrasclave) {
                 trie.insertar(p);
         }
