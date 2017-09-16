@@ -7,12 +7,12 @@ import java.util.LinkedList;
 
 public class TArbolTrie implements IArbolTrie,Serializable {
 
-    private TNodoTrie raiz;
+    private TNodoTrieHashMap raiz;
 
     @Override
     public void insertar(String palabra) {
         if (raiz == null) {
-            raiz = new TNodoTrie();
+            raiz = new TNodoTrieHashMap();
         }
         raiz.insertar(palabra);
     }
