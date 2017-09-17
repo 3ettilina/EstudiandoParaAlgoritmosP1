@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
     
     private TTrieHashMap trie;
-    
+    private String[] palabrasclave;
     /**
      * Creates new form TriePrefixAEDIIGUI
      */
@@ -29,14 +29,14 @@ public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
         this.trie           = new TTrieHashMap();
         String[] palabras = {};
         //TODO: CARGAR PALABRAS CON EL LECTOR DE ARCHIVOS GENÉRICO
-        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
+        palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
         for (String p : palabrasclave) {
-                trie.insertar(p);
+                trie.insertar(p,0);
         }
         
         
         for (String p : palabras) {
-            trie.insertar(p);
+            trie.insertar(p,0);
         }
         
         initComponents();
@@ -113,9 +113,9 @@ public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
         DefaultListModel listModel = new DefaultListModel();
         jListPalabras.clearSelection();
         LinkedList<String> palabras;
-        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
+        palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
         for (String p : palabrasclave) {
-                trie.insertar(p);
+                trie.insertar(p,0);
         }
         palabras = this.trie.predecir(jtfSearch.getText());
         for(String palabra : palabras){

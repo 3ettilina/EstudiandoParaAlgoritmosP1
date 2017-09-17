@@ -15,11 +15,11 @@ public class TTrieHashMap {
 
     private TNodoTrieHashMap raiz;
 
-    public void insertar(String palabra) {
+    public void insertar(String unaPalabra, int unaPosicion) {
         if (raiz == null) {
             raiz = new TNodoTrieHashMap();
         }
-        raiz.insertar(palabra);
+        raiz.insertar(unaPalabra, unaPosicion);
     }
 
     public void imprimir() {

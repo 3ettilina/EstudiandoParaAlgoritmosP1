@@ -44,7 +44,7 @@ public class MainPruebas {
 
         String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
         for (String p : palabrasclave) {
-            trie.insertar(p);
+            trie.insertar(p,0);
         }
         trie.buscar("alabachetebonete");
         trie.imprimir();
