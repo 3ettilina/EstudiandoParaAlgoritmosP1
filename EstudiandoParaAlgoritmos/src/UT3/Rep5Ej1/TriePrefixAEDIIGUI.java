@@ -113,7 +113,7 @@ public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
         DefaultListModel listModel = new DefaultListModel();
         jListPalabras.clearSelection();
         LinkedList<String> palabras;
-        palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
+//        palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
         for (String p : palabrasclave) {
                 trie.insertar(p,0);
         }
