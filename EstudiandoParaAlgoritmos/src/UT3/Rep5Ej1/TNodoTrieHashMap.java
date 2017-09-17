@@ -42,10 +42,15 @@ public class TNodoTrieHashMap {
                 contador[0]++;
                 unNodo = unNodo.hijos.get(letra);
             } else {
-                return contador[0];
+                return -1;
             }
         }
-        return contador[0];
+        if (unNodo.esPalabra){
+            return contador[0];
+        }
+        else{
+            return -1;
+        }
     }
 
     private void imprimir(String unString, TNodoTrieHashMap unNodo) {
