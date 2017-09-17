@@ -45,4 +45,11 @@ public class TTrieHashMap {
         }
         return listaRetorno;
     }
+
+    public TNodoTrieHashMap buscarNodoTrie(String unaPalabra) {
+        if (raiz != null) {
+            return raiz.buscarNodoTrie(unaPalabra);
+        }
+        return null;
+    }
 }

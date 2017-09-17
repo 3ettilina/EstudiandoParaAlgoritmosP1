@@ -65,7 +65,7 @@ public class TNodoTrieHashMap {
         imprimir("", this);
     }
 
-    private TNodoTrieHashMap buscarNodoTrie(String unString) {
+    public TNodoTrieHashMap buscarNodoTrie(String unString) {
         TNodoTrieHashMap nodo = this;
         for (int c = 0; c < unString.length(); c++) {
             Character character = unString.charAt(c);

@@ -48,6 +48,7 @@ public class MainPruebas {
         }
         trie.buscar("alabachetebonete");
         trie.imprimir();
+        trie.buscarNodoTrie("ala");
     }
 
 }
