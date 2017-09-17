@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/*
+ /*
 * UNIDAD TEMÁTICA 3 – DICCIONARIOS, MAPAS & HASHING
 * PRACTICOS DOMICILIARIOS INDIVIDUALES - 5
 * EJERCICIO 1
@@ -27,21 +27,27 @@
 * • Implementa también la aplicación para la búsqueda de patrones en un cierto texto,
 * indicando las posiciones del texto en que ocurren
 *
-*/
-
+ */
 package UT3.Rep5Ej1;
 
 /**
  *
  * @author Bettina
  */
-public class Main {
+public class MainPruebas {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        TTrieHashMap trie = new TTrieHashMap();
+
+        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
+        for (String p : palabrasclave) {
+            trie.insertar(p);
+        }
+        trie.buscar("alabachetebonete");
+        trie.imprimir();
     }
-    
+
 }

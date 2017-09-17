@@ -5,7 +5,7 @@
  */
 package UT3.Rep5Ej1;
 
-import CodigoHash.HashPiola;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -13,59 +13,121 @@ import java.util.LinkedList;
  * @author Bettina
  */
 public class TNodoTrieHashMap {
-    private HashPiola hijos;
-    private 
+
+    private HashMap<Character, TNodoTrieHashMap> hijos;
+    private boolean esPalabra;
 
     public TNodoTrieHashMap() {
-        hijos = new HashPiola(cantidasPalabrasArchivo(), 0.5);
-        
+        hijos = new HashMap<>();
+        esPalabra = false;
     }
 
     public void insertar(String unaPalabra) {
-        
-    }
-    
-    public int buscar(String palabra, int[] contador){
+        TNodoTrieHashMap unNodo = this;
+        for (int i = 0; i < unaPalabra.length(); i++) {
+            Character letra = unaPalabra.charAt(i);
+            if (!unNodo.hijos.containsKey(letra)) {
+                unNodo.hijos.put(letra, new TNodoTrieHashMap());
+            }
+            unNodo = unNodo.hijos.get(letra);
+        }
+        unNodo.esPalabra = true;
     }
 
-    private void imprimir(String s, TNodoTrieHashMap nodo) {
-        
+    public int buscar(String unaPalabra, int[] contador) {
+        TNodoTrieHashMap unNodo = this;
+        for (int i = 0; i < unaPalabra.length(); i++) {
+            Character letra = unaPalabra.charAt(i);
+            if (unNodo.hijos.containsKey(letra)) {
+                contador[0]++;
+                unNodo = unNodo.hijos.get(letra);
+            } else {
+                return contador[0];
+            }
+        }
+        return contador[0];
+    }
+
+    private void imprimir(String unString, TNodoTrieHashMap unNodo) {
+        if (unNodo != null) {
+            if (unNodo.esPalabra) {
+                System.out.println(unString);
+            }
+            for (Character caracter : unNodo.hijos.keySet()) {
+                if (unNodo.hijos.get(caracter) != null) {
+                    imprimir(unString + caracter, unNodo.hijos.get(caracter));
+                }
+            }
+        }
     }
 
     public void imprimir() {
+        imprimir("", this);
     }
 
-    private TNodoTrieHashMap buscarNodoTrie(String s) {
-        
+    private TNodoTrieHashMap buscarNodoTrie(String unString) {
+        TNodoTrieHashMap nodo = this;
+        for (int c = 0; c < unString.length(); c++) {
+            Character character = unString.charAt(c);
+            if (nodo.hijos.get(character) == null) {
+                return null;
+            }
+            nodo = nodo.hijos.get(character);
+        }
+        return nodo;
     }
 
-    private void predecir(String s, String prefijo, LinkedList<String> palabras, TNodoTrieHashMap nodo) {
-        
+    private void predecir(String unString, String unPrefijo, LinkedList<String> listaPalabras, TNodoTrieHashMap unNodo) {
+        if (unNodo != null) {
+            if (unNodo.esPalabra) {
+                listaPalabras.add(unPrefijo + unString);
+            }
+            for (Character caracter : unNodo.hijos.keySet()) {
+                if (unNodo.hijos.get(caracter) != null) {
+                    predecir(unString + caracter, unPrefijo, listaPalabras, unNodo.hijos.get(caracter));
+                }
+            }
+        }
     }
 
-    public void predecir(String prefijo, LinkedList<String> palabras) {
-        
+    public void predecir(String unPrefijo, LinkedList<String> listaPalabras) {
+        TNodoTrieHashMap nodo = buscarNodoTrie(unPrefijo);
+        predecir("", unPrefijo, listaPalabras, nodo);
     }
-//<editor-fold defaultstate="collapsed" desc="Getters & Setters">
-    
+
+    //<editor-fold defaultstate="collapsed" desc="Getters & Setters">  
+    private int cantidasPalabrasArchivo() {
+        String[] palabras = ManejadorArchivosGenerico.leerArchivo("src/palabras.txt");
+        return palabras.length;
+    }
 
     /**
      * @return the hijos
      */
-    public HashPiola[] getHijos() {
+    public HashMap getHijos() {
         return hijos;
     }
 
     /**
      * @param hijos the hijos to set
      */
-    public void setHijos(HashPiola[] hijos) {
+    public void setHijos(HashMap hijos) {
         this.hijos = hijos;
+    }
+
+    /**
+     * @return the esPalabra
+     */
+    public boolean isEsPalabra() {
+        return esPalabra;
+    }
+
+    /**
+     * @param esPalabra the esPalabra to set
+     */
+    public void setEsPalabra(boolean esPalabra) {
+        this.esPalabra = esPalabra;
     }
 //</editor-fold>
 
-    private int cantidasPalabrasArchivo() {
-        String[] palabras = ManejadorArchivosGenerico.leerArchivo("src/palabras.txt");
-        return palabras.length;
-    }
 }

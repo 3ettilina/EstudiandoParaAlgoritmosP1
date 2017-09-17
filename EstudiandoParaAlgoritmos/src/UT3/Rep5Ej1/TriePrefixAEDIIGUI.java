@@ -1,6 +1,7 @@
-package Tries;
+package UT3.Rep5Ej1;
 
 
+import Tries.*;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -19,16 +20,16 @@ import javax.swing.JOptionPane;
  */
 public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
     
-    private TArbolTrie trie;
+    private TTrieHashMap trie;
     
     /**
      * Creates new form TriePrefixAEDIIGUI
      */
     public TriePrefixAEDIIGUI() {
-        this.trie           = new TArbolTrie();
+        this.trie           = new TTrieHashMap();
         String[] palabras = {};
         //TODO: CARGAR PALABRAS CON EL LECTOR DE ARCHIVOS GENÉRICO
-        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/Tries/palabras1.txt");
+        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
         for (String p : palabrasclave) {
                 trie.insertar(p);
         }
@@ -112,7 +113,7 @@ public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
         DefaultListModel listModel = new DefaultListModel();
         jListPalabras.clearSelection();
         LinkedList<String> palabras;
-        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/palabras1.txt");
+        String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
         for (String p : palabrasclave) {
                 trie.insertar(p);
         }
@@ -152,6 +153,7 @@ public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TriePrefixAEDIIGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -5,7 +5,6 @@
  */
 package UT3.Rep5Ej1;
 
-import TriesBetti.TNodoTrieHashMap;
 import java.util.LinkedList;
 
 /**
@@ -36,17 +35,14 @@ public class TTrieHashMap {
         if (this.raiz != null) {
             return raiz.buscar(palabra, cont);
         }
-
         return cont[0];
     }
 
     public LinkedList<String> predecir(String prefijo) {
         LinkedList<String> listaRetorno = new LinkedList<>();
         if (this.raiz != null) {
-
             raiz.predecir(prefijo, listaRetorno);
         }
-
         return listaRetorno;
     }
 }

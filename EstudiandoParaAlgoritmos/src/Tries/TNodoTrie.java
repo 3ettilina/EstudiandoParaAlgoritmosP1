@@ -32,7 +32,6 @@ public class TNodoTrie implements INodoTrie {
         if (nodo != null) {
             if (nodo.esPalabra) {
                 System.out.println(s);
-                
             }
             for (int c = 0; c < CANT_CHR_ABECEDARIO; c++) {
                 if (nodo.hijos[c] != null) {
