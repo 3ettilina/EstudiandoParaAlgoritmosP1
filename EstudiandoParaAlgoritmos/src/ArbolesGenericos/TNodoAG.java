@@ -77,6 +77,12 @@ public class TNodoAG {
         return resultado;
     }
     
+    /**
+     * Metodo que busca un nodo en el arbol y devuelve todos sus hijos.
+     * Si no tiene ninguno devuelve null.
+     * @param unaEtiqueta
+     * @return hijos
+     */
     public TNodoAG buscar(Comparable unaEtiqueta){
         TNodoAG resultado = null;
         if(this.etiqueta == unaEtiqueta){
@@ -96,15 +102,17 @@ public class TNodoAG {
         }
     }
     
+    
     public void listarIndentado(int profundidad, int[] maxProfundidad){
         if (profundidad > maxProfundidad[0]){
-            maxProfundidad[0]= profundidad; //Solo se actualiza cuando aumenta la profundidad.
+            maxProfundidad[0] = profundidad; //Solo se actualiza cuando aumenta la profundidad.
         }
         String indentacion = "";
         for (int i = 0; i < profundidad; i++) {
             indentacion += "\t";            
         }        
         System.out.println(indentacion + this.etiqueta );
+        
         TNodoAG unHijo = this.primerHijo;
         while (unHijo != null){            
             unHijo.listarIndentado(profundidad+1, maxProfundidad);
