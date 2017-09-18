@@ -43,10 +43,9 @@ public class MainPruebas {
         TTrieHashMap trie = new TTrieHashMap();
         TTrieHashMap trieSufijos = new TTrieHashMap();
         String texto1 = "panamabananas";
-        
-        
+
         //Prueba sufijos
-        for(int i=(texto1.length()-1);i>-1;i--){
+        for (int i = (texto1.length() - 1); i > -1; i--) {
             String sufijo = texto1.substring(i, texto1.length());
             trieSufijos.insertar(sufijo, i);
         }
@@ -57,7 +56,7 @@ public class MainPruebas {
         //ProbandoTrie
         String[] palabrasclave = ManejadorArchivosGenerico.leerArchivo("./src/UT3/Rep5Ej1/palabras.txt");
         for (String p : palabrasclave) {
-            trie.insertar(p,0);
+            trie.insertar(p, 0);
         }
         trie.buscar("alabachetebonete");
         trie.imprimir();
