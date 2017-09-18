@@ -5,6 +5,7 @@
  */
 package UT3.Rep5Ej1;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -51,5 +52,34 @@ public class TTrieHashMap {
             return raiz.buscarNodoTrie(unaPalabra);
         }
         return null;
+    }
+
+    public ArrayList<Integer> ocurrenciasPosicionesPatron(String patron) {
+        if (raiz != null) {
+
+            return raiz.ocurrenciasPosicionesPatron(patron);
+        }
+        return null;
+    }
+
+    public int contarPal() {
+        if (raiz != null) {
+            return raiz.contarPal();
+        }
+        return 0;
+    }
+
+    public int alturaTrie() {
+        if (raiz != null) {
+            return raiz.alturaTrie();
+        }
+        return 0;
+    }
+
+    public int contarPrefijos() {
+        if (raiz != null) {
+            return raiz.contarPrefijos();
+        }
+        return 0;
     }
 }
