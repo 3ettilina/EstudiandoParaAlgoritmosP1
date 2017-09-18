@@ -1,0 +1,56 @@
+<<<<<<<<<<<<<<<<  factor 0.7   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 1
+Promedio busquedas exitosas: 2
+Promedio busquedas no exitosas: 285
+<<<<<<<<<<<<<<<<  factor 0.75   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 1
+Promedio busquedas exitosas: 2
+Promedio busquedas no exitosas: 266
+<<<<<<<<<<<<<<<<  factor 0.8   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 2
+Promedio busquedas exitosas: 3
+Promedio busquedas no exitosas: 250
+<<<<<<<<<<<<<<<<  factor 0.85   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 1
+Promedio busquedas exitosas: 2
+Promedio busquedas no exitosas: 235
+<<<<<<<<<<<<<<<<  factor 0.9   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 2
+Promedio busquedas exitosas: 5
+Promedio busquedas no exitosas: 222
+<<<<<<<<<<<<<<<<  factor 0.91   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 3
+Promedio busquedas exitosas: 8
+Promedio busquedas no exitosas: 219
+<<<<<<<<<<<<<<<<  factor 0.92   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 3
+Promedio busquedas exitosas: 8
+Promedio busquedas no exitosas: 217
+<<<<<<<<<<<<<<<<  factor 0.93   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 6
+Promedio busquedas exitosas: 13
+Promedio busquedas no exitosas: 215
+<<<<<<<<<<<<<<<<  factor 0.94   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 5
+Promedio busquedas exitosas: 11
+Promedio busquedas no exitosas: 212
+<<<<<<<<<<<<<<<<  factor 0.95   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 7
+Promedio busquedas exitosas: 11
+Promedio busquedas no exitosas: 210
+<<<<<<<<<<<<<<<<  factor 0.96   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 2
+Promedio busquedas exitosas: 4
+Promedio busquedas no exitosas: 208
+<<<<<<<<<<<<<<<<  factor 0.97   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 9
+Promedio busquedas exitosas: 20
+Promedio busquedas no exitosas: 206
+<<<<<<<<<<<<<<<<  factor 0.98   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 6
+Promedio busquedas exitosas: 14
+Promedio busquedas no exitosas: 204
+<<<<<<<<<<<<<<<<  factor 0.99   >>>>>>>>>>>>>>>>>>>>>
+Promedio comparaciones insercion: 7
+Promedio busquedas exitosas: 17
+Promedio busquedas no exitosas: 202

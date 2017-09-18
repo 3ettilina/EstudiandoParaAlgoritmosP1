@@ -1,0 +1,800 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Insercion>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+3
+0
+0
+0
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+1
+3
+0
+0
+0
+0
+0
+0
+2
+0
+0
+1
+0
+1
+0
+1
+0
+2
+0
+0
+0
+1
+0
+0
+1
+0
+0
+2
+2
+0
+7
+0
+0
+0
+1
+0
+3
+0
+0
+8
+0
+0
+1
+0
+0
+0
+1
+2
+0
+0
+0
+0
+0
+0
+0
+4
+1
+0
+0
+0
+0
+5
+1
+0
+0
+0
+0
+0
+2
+2
+13
+18
+3
+0
+4
+3
+0
+1
+3
+5
+0
+0
+0
+0
+1
+0
+0
+1
+1
+0
+2
+0
+7
+1
+0
+2
+2
+0
+12
+1
+17
+0
+0
+0
+4
+1
+10
+0
+0
+5
+0
+0
+0
+18
+1
+10
+2
+1
+8
+1
+4
+4
+4
+8
+10
+3
+1
+12
+1
+1
+37
+0
+38
+52
+1
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Tabla>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+La posicion 1 contiene 5817678
+La posicion 2 contiene 6899419
+La posicion 3 contiene 0
+La posicion 4 contiene 9604981
+La posicion 5 contiene 8806136
+La posicion 6 contiene 0
+La posicion 7 contiene 0
+La posicion 8 contiene 7984069
+La posicion 9 contiene 0
+La posicion 10 contiene 0
+La posicion 11 contiene 0
+La posicion 12 contiene 0
+La posicion 13 contiene 8005370
+La posicion 14 contiene 0
+La posicion 15 contiene 0
+La posicion 16 contiene 0
+La posicion 17 contiene 9669850
+La posicion 18 contiene 1994094
+La posicion 19 contiene 3544590
+La posicion 20 contiene 0
+La posicion 21 contiene 7028666
+La posicion 22 contiene 4130475
+La posicion 23 contiene 0
+La posicion 24 contiene 5691619
+La posicion 25 contiene 0
+La posicion 26 contiene 444577
+La posicion 27 contiene 5663068
+La posicion 28 contiene 3367697
+La posicion 29 contiene 4514052
+La posicion 30 contiene 4185901
+La posicion 31 contiene 1805107
+La posicion 32 contiene 7430155
+La posicion 33 contiene 1844070
+La posicion 34 contiene 2805779
+La posicion 35 contiene 3913898
+La posicion 36 contiene 1068947
+La posicion 37 contiene 8221983
+La posicion 38 contiene 7174121
+La posicion 39 contiene 558564
+La posicion 40 contiene 9038253
+La posicion 41 contiene 6248470
+La posicion 42 contiene 5732535
+La posicion 43 contiene 0
+La posicion 44 contiene 2523605
+La posicion 45 contiene 0
+La posicion 46 contiene 0
+La posicion 47 contiene 6474270
+La posicion 48 contiene 3371346
+La posicion 49 contiene 6810652
+La posicion 50 contiene 0
+La posicion 51 contiene 6590192
+La posicion 52 contiene 6986833
+La posicion 53 contiene 3899396
+La posicion 54 contiene 4126635
+La posicion 55 contiene 9373922
+La posicion 56 contiene 0
+La posicion 57 contiene 0
+La posicion 58 contiene 2456597
+La posicion 59 contiene 3105879
+La posicion 60 contiene 5693107
+La posicion 61 contiene 779781
+La posicion 62 contiene 1279514
+La posicion 63 contiene 632406
+La posicion 64 contiene 9795978
+La posicion 65 contiene 8251538
+La posicion 66 contiene 4920891
+La posicion 67 contiene 6765900
+La posicion 68 contiene 9398619
+La posicion 69 contiene 8674792
+La posicion 70 contiene 551343
+La posicion 71 contiene 8191041
+La posicion 72 contiene 4709873
+La posicion 73 contiene 6785024
+La posicion 74 contiene 0
+La posicion 75 contiene 2171538
+La posicion 76 contiene 0
+La posicion 77 contiene 467618
+La posicion 78 contiene 0
+La posicion 79 contiene 8329474
+La posicion 80 contiene 1824031
+La posicion 81 contiene 0
+La posicion 82 contiene 1777811
+La posicion 83 contiene 3398002
+La posicion 84 contiene 9281991
+La posicion 85 contiene 0
+La posicion 86 contiene 6309265
+La posicion 87 contiene 5552531
+La posicion 88 contiene 6136963
+La posicion 89 contiene 9509475
+La posicion 90 contiene 1276879
+La posicion 91 contiene 263144
+La posicion 92 contiene 2364913
+La posicion 93 contiene 1572606
+La posicion 94 contiene 9621285
+La posicion 95 contiene 6511828
+La posicion 96 contiene 1643756
+La posicion 97 contiene 8824140
+La posicion 98 contiene 2581024
+La posicion 99 contiene 6197716
+La posicion 100 contiene 7647539
+La posicion 101 contiene 3500388
+La posicion 102 contiene 6959052
+La posicion 103 contiene 7015922
+La posicion 104 contiene 3927761
+La posicion 105 contiene 5036606
+La posicion 106 contiene 476600
+La posicion 107 contiene 3152638
+La posicion 108 contiene 7184601
+La posicion 109 contiene 2027824
+La posicion 110 contiene 4500339
+La posicion 111 contiene 5151804
+La posicion 112 contiene 2520781
+La posicion 113 contiene 6539191
+La posicion 114 contiene 5116475
+La posicion 115 contiene 1962006
+La posicion 116 contiene 1560286
+La posicion 117 contiene 3873566
+La posicion 118 contiene 5111867
+La posicion 119 contiene 8112434
+La posicion 120 contiene 5862327
+La posicion 121 contiene 9704318
+La posicion 122 contiene 9960839
+La posicion 123 contiene 2047440
+La posicion 124 contiene 3819122
+La posicion 125 contiene 9864528
+La posicion 126 contiene 8074213
+La posicion 127 contiene 9800884
+La posicion 128 contiene 2602593
+La posicion 129 contiene 6262844
+La posicion 130 contiene 2288479
+La posicion 131 contiene 8266364
+La posicion 132 contiene 4679924
+La posicion 133 contiene 9627855
+La posicion 134 contiene 3835589
+La posicion 135 contiene 2643014
+La posicion 136 contiene 1708411
+La posicion 137 contiene 7081054
+La posicion 138 contiene 654987
+La posicion 139 contiene 9787342
+La posicion 140 contiene 4512219
+La posicion 141 contiene 9442481
+La posicion 142 contiene 3016655
+La posicion 143 contiene 8236368
+La posicion 144 contiene 614332
+La posicion 145 contiene 5806932
+La posicion 146 contiene 7437039
+La posicion 147 contiene 8556534
+La posicion 148 contiene 1384385
+La posicion 149 contiene 9761925
+La posicion 150 contiene 1314934
+La posicion 151 contiene 6917960
+La posicion 152 contiene 9612631
+La posicion 153 contiene 944433
+La posicion 154 contiene 9549955
+La posicion 155 contiene 9566378
+La posicion 156 contiene 2647391
+La posicion 157 contiene 4474734
+La posicion 158 contiene 9770384
+La posicion 159 contiene 6415334
+La posicion 160 contiene 3191359
+La posicion 161 contiene 9910542
+La posicion 162 contiene 5938838
+La posicion 163 contiene 7998018
+La posicion 164 contiene 3595312
+La posicion 165 contiene 1608978
+La posicion 166 contiene 0
+La posicion 167 contiene 1766280
+La posicion 168 contiene 0
+La posicion 169 contiene 0
+La posicion 170 contiene 0
+La posicion 171 contiene 924366
+La posicion 172 contiene 0
+La posicion 173 contiene 0
+La posicion 174 contiene 9478585
+La posicion 175 contiene 0
+La posicion 176 contiene 0
+La posicion 177 contiene 0
+La posicion 178 contiene 6825059
+La posicion 179 contiene 8006020
+La posicion 180 contiene 0
+La posicion 181 contiene 0
+La posicion 182 contiene 0
+La posicion 183 contiene 9408172
+La posicion 184 contiene 4969409
+La posicion 185 contiene 1205586
+La posicion 186 contiene 5003291
+La posicion 187 contiene 7262846
+La posicion 188 contiene 102550
+La posicion 189 contiene 1913681
+La posicion 190 contiene 7480891
+La posicion 191 contiene 4921500
+La posicion 192 contiene 1354417
+La posicion 193 contiene 0
+La posicion 194 contiene 4498003
+La posicion 195 contiene 8591671
+La posicion 196 contiene 9685519
+La posicion 197 contiene 4881091
+La posicion 198 contiene 2717371
+La posicion 199 contiene 9477158
+La posicion 200 contiene 7297462
+La posicion 201 contiene 6050682
+La posicion 202 contiene 1670968
+La posicion 203 contiene 6797738
+La posicion 204 contiene 4992177
+La posicion 205 contiene 5111725
+La posicion 206 contiene 4499951
+La posicion 207 contiene 2834750
+La posicion 208 contiene 7776871
+La posicion 209 contiene 958283
+La posicion 210 contiene 8367587
+La posicion 211 contiene 8640092
+La posicion 212 contiene 7586424
+La posicion 213 contiene 3072399
+La posicion 214 contiene 7348299
+La posicion 215 contiene 0
+La posicion 216 contiene 8797155
+La posicion 217 contiene 5871618
+La posicion 218 contiene 7216654
+La posicion 219 contiene 2056006
+La posicion 220 contiene 292552
+La posicion 221 contiene 0
+La posicion 222 contiene 7943869
+La posicion 223 contiene 9760806
+La posicion 224 contiene 6917791
+La posicion 225 contiene 7728492
+La posicion 226 contiene 0
+La posicion 227 contiene 0
+La posicion 228 contiene 7982111
+La posicion 229 contiene 751396
+La posicion 230 contiene 0
+La posicion 231 contiene 8100936
+La posicion 232 contiene 7484321
+La posicion 233 contiene 8598490
+La posicion 234 contiene 2361667
+La posicion 235 contiene 8100698
+La posicion 236 contiene 7289273
+La posicion 237 contiene 8289944
+La posicion 238 contiene 7014359
+La posicion 239 contiene 2531798
+La posicion 240 contiene 8995621
+La posicion 241 contiene 7384627
+La posicion 242 contiene 9509871
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Buscar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Archivo leido satisfactoriamente
+0
+3
+-242
+No se encontro la clave: 7262847
+-242
+No se encontro la clave: 4969410
+8
+0
+0
+-242
+No se encontro la clave: 9795979
+-242
+No se encontro la clave: 3913899
+0
+-242
+No se encontro la clave: 467619
+1
+-242
+No se encontro la clave: 263145
+0
+0
+0
+-242
+No se encontro la clave: 3899397
+-242
+No se encontro la clave: 8236369
+0
+-242
+No se encontro la clave: 8289945
+-242
+No se encontro la clave: 7174122
+-242
+No se encontro la clave: 8221984
+0
+-242
+No se encontro la clave: 8005371
+0
+-242
+No se encontro la clave: 7982112
+-242
+No se encontro la clave: 614333
+1
+0
+0
+-242
+No se encontro la clave: 3544591
+-242
+No se encontro la clave: 1777812
+0
+-242
+No se encontro la clave: 5663069
+2
+-242
+No se encontro la clave: 9442482
+18
+-242
+No se encontro la clave: 1913682
+0
+4
+-242
+No se encontro la clave: 1279515
+0
+-242
+No se encontro la clave: 5111726
+3
+-242
+No se encontro la clave: 8591672
+0
+-242
+No se encontro la clave: 1384386
+0
+-242
+No se encontro la clave: 7484322
+-242
+No se encontro la clave: 3371347
+0
+0
+1
+1
+-242
+No se encontro la clave: 9398620
+-242
+No se encontro la clave: 751397
+-242
+No se encontro la clave: 9760807
+-242
+No se encontro la clave: 7297463
+-242
+No se encontro la clave: 476601
+-242
+No se encontro la clave: 4130476
+2
+-242
+No se encontro la clave: 5862328
+-242
+No se encontro la clave: 9478586
+-242
+No se encontro la clave: 8367588
+1
+17
+0
+-242
+No se encontro la clave: 8006021
+-242
+No se encontro la clave: 8329475
+-242
+No se encontro la clave: 8806137
+-242
+No se encontro la clave: 3819123
+-242
+No se encontro la clave: 7437040
+0
+0
+5
+-242
+No se encontro la clave: 4920892
+-242
+No se encontro la clave: 4474735
+-242
+No se encontro la clave: 444578
+18
+1
+10
+-242
+No se encontro la clave: 1205587
+1
+-242
+No se encontro la clave: 6248471
+-242
+No se encontro la clave: 9509476
+-242
+No se encontro la clave: 7776872
+-242
+No se encontro la clave: 8556535
+-242
+No se encontro la clave: 7014360
+-242
+No se encontro la clave: 558565
+-242
+No se encontro la clave: 8674793
+-242
+No se encontro la clave: 1314935
+1
+12
+-242
+No se encontro la clave: 958284
+1
+37
+0
+-242
+No se encontro la clave: 9566379
+52
+1
+-242
+No se encontro la clave: 7554431
+-242
+No se encontro la clave: 7141998
+-242
+No se encontro la clave: 6028647
+-242
+No se encontro la clave: 9437064
+-242
+No se encontro la clave: 7592979
+-242
+No se encontro la clave: 4152457
+-242
+No se encontro la clave: 6945891
+-242
+No se encontro la clave: 3872280
+-242
+No se encontro la clave: 2505084
+-242
+No se encontro la clave: 9110986
+-242
+No se encontro la clave: 5821406
+-242
+No se encontro la clave: 7159337
+-242
+No se encontro la clave: 6203761
+-242
+No se encontro la clave: 2909376
+-242
+No se encontro la clave: 9097037
+-242
+No se encontro la clave: 9869261
+-242
+No se encontro la clave: 8558038
+-242
+No se encontro la clave: 505920
+-242
+No se encontro la clave: 8844327
+-242
+No se encontro la clave: 3334575
+-242
+No se encontro la clave: 2826474
+-242
+No se encontro la clave: 2730353
+-242
+No se encontro la clave: 8927689
+-242
+No se encontro la clave: 6333294
+-242
+No se encontro la clave: 3264203
+-242
+No se encontro la clave: 1451471
+-242
+No se encontro la clave: 850720
+-242
+No se encontro la clave: 6461732
+-242
+No se encontro la clave: 7331008
+-242
+No se encontro la clave: 3362358
+-242
+No se encontro la clave: 9738726
+-242
+No se encontro la clave: 4756521
+-242
+No se encontro la clave: 1263155
+-242
+No se encontro la clave: 4500710
+-242
+No se encontro la clave: 9219560
+-242
+No se encontro la clave: 4580629
+-242
+No se encontro la clave: 302999
+-242
+No se encontro la clave: 5774948
+-242
+No se encontro la clave: 2783957
+-242
+No se encontro la clave: 2353905
+-242
+No se encontro la clave: 8645267
+-242
+No se encontro la clave: 6762349
+-242
+No se encontro la clave: 293341
+-242
+No se encontro la clave: 6417793
+-242
+No se encontro la clave: 5210192
+-242
+No se encontro la clave: 6048680
+-242
+No se encontro la clave: 9097358
+-242
+No se encontro la clave: 6702180
+-242
+No se encontro la clave: 8516305
+-242
+No se encontro la clave: 3593738
+-242
+No se encontro la clave: 9798264
+-242
+No se encontro la clave: 5600242
+-242
+No se encontro la clave: 1295910
+-242
+No se encontro la clave: 7325230
+-242
+No se encontro la clave: 5264311
+-242
+No se encontro la clave: 2270774
+-242
+No se encontro la clave: 8390033
+-242
+No se encontro la clave: 1028455
+-242
+No se encontro la clave: 8281094
+-242
+No se encontro la clave: 574934
+-242
+No se encontro la clave: 7675994
+-242
+No se encontro la clave: 3183218
+-242
+No se encontro la clave: 9716719
+-242
+No se encontro la clave: 9803150
+-242
+No se encontro la clave: 1908155
+-242
+No se encontro la clave: 8005699
+-242
+No se encontro la clave: 279500
+-242
+No se encontro la clave: 5489407
+-242
+No se encontro la clave: 2454904
+-242
+No se encontro la clave: 5554501
+-242
+No se encontro la clave: 1127031
+-242
+No se encontro la clave: 7772211
+-242
+No se encontro la clave: 7255893
+-242
+No se encontro la clave: 7085082
+-242
+No se encontro la clave: 3009875
+-242
+No se encontro la clave: 4750763
+-242
+No se encontro la clave: 7877629
+-242
+No se encontro la clave: 2305819
+-242
+No se encontro la clave: 3190865
+-242
+No se encontro la clave: 5797637
+-242
+No se encontro la clave: 4771397
+-242
+No se encontro la clave: 2949541
+-242
+No se encontro la clave: 7225479
+-242
+No se encontro la clave: 4220857
+-242
+No se encontro la clave: 9597180
+-242
+No se encontro la clave: 4129323
+-242
+No se encontro la clave: 1956469
+-242
+No se encontro la clave: 9356485
+-242
+No se encontro la clave: 8575104
+-242
+No se encontro la clave: 252016
+-242
+No se encontro la clave: 9547955
+-242
+No se encontro la clave: 3064025
+-242
+No se encontro la clave: 9712473
+-242
+No se encontro la clave: 446370
+-242
+No se encontro la clave: 1508856
+-242
+No se encontro la clave: 4476331
+-242
+No se encontro la clave: 9235595
+-242
+No se encontro la clave: 7250270
+-242
+No se encontro la clave: 3901554
+-242
+No se encontro la clave: 2103860

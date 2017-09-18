@@ -1,0 +1,15 @@
+Start,0
+Task3,4
+Task4,2
+Task7,2
+Task13,1
+Task5,1
+Task10,2
+Task9,3
+Task1,2
+Task2,5
+Task11,2
+Task12,2
+Task8,3
+Task6,2
+End,0
