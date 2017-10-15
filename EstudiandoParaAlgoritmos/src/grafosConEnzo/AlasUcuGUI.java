@@ -5,7 +5,10 @@
  */
 package grafosConEnzo;
 
-import javax.swing.AbstractButton;
+import uy.edu.ucu.alasucu.clasesobligatorio.AdministracionAeropuertos;
+import uy.edu.ucu.alasucu.interfacesobligatorio.IAeropuerto;
+import uy.edu.ucu.alasucu.tdagrafo.TCaminos;
+import uy.edu.ucu.alasucu.tdagrafo.TVertice;
 
 /**
  *
@@ -14,6 +17,7 @@ import javax.swing.AbstractButton;
 public class AlasUcuGUI extends javax.swing.JFrame {
 
     AdministracionAeropuertos administracion;
+    TCaminos todosLosCaminos;
 
     /**
      * Creates new form AlasUcuGUI
@@ -23,9 +27,13 @@ public class AlasUcuGUI extends javax.swing.JFrame {
         initComponents();
         Object[] listaVertices = administracion.getListaVertices().toArray();
         for (Object vertice : listaVertices) {
-            jComboBox1.addItem(((TVertice<IAeropuerto>) vertice).toString());
-            jComboBox2.addItem(((TVertice<IAeropuerto>) vertice).toString());
+            jComboBox1.addItem(((TVertice<IAeropuerto>) vertice).getDatos());
+            jComboBox2.addItem(((TVertice<IAeropuerto>) vertice).getDatos());
         }
+        for (int i = 0; i < 11; i++) {
+            jComboBox3.addItem(i);
+        }
+        todosLosCaminos = new TCaminos();
     }
 
     /**
@@ -40,13 +48,13 @@ public class AlasUcuGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,27 +63,6 @@ public class AlasUcuGUI extends javax.swing.JFrame {
         jLabel2.setText("Destino");
 
         jLabel3.setText("Número de escalas");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Aerolinea", "Origen", "Escalas", "Destino", "Costo"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         jLabel4.setText("Vuelos disponibles");
 
@@ -91,8 +78,6 @@ public class AlasUcuGUI extends javax.swing.JFrame {
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
-
         jButton1.setText("Buscar vuelos");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -100,10 +85,27 @@ public class AlasUcuGUI extends javax.swing.JFrame {
             }
         });
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(249, 249, 249))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -125,15 +127,12 @@ public class AlasUcuGUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(367, 367, 367)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
+                        .addGap(283, 283, 283)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,10 +150,10 @@ public class AlasUcuGUI extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -169,7 +168,8 @@ public class AlasUcuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        System.out.println(jComboBox1.getSelectedItem());
+        administracion.obtenerCaminosEntreOrigenDestinoDeTodasLasAerolineas(((IAeropuerto) jComboBox1.getSelectedItem()).getAbreviatura(), ((IAeropuerto) jComboBox2.getSelectedItem()).getAbreviatura(), todosLosCaminos, (int) jComboBox3.getSelectedItem());
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -210,14 +210,14 @@ public class AlasUcuGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<IAeropuerto> jComboBox1;
+    private javax.swing.JComboBox<IAeropuerto> jComboBox2;
+    private javax.swing.JComboBox<Integer> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable<TCaminos> jTable2;
     // End of variables declaration//GEN-END:variables
 }
