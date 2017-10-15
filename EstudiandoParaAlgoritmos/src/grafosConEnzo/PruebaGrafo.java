@@ -3,7 +3,7 @@ package grafosConEnzo;
 public class PruebaGrafo {
 
     public static void main(String[] args) {
-
+        
 //        TGrafoDirigido gd = (TGrafoDirigido) UtilGrafos.cargarGrafo("src/UT04/TA03/ejemploClaseAeropuertos.txt", "src/UT04/TA03/ejemploClaseConexiones.txt",
 //                false, TGrafoDirigido.class);
         TGrafoDirigido gd = (TGrafoDirigido) UtilGrafos.cargarGrafo("src/grafosConEnzo/aeropuertos.txt", "src/grafosConEnzo/conexiones.txt",
@@ -25,6 +25,8 @@ public class PruebaGrafo {
         }
         System.out.println(gd.existeCamino("Montevideo", "Buenos_Aires"));
         System.out.println(gd.existeCamino("Montevideo", "Porto_Alegre"));
+        
+        //ArrayDePaíses
         String[] paises = {"Asuncion", "Buenos_Aires", "Curitiba", "Montevideo", "Porto_Alegre", "Rio_de_Janeiro", "San_Pablo", "Santos"};
 
         for (int i = 0; i < paises.length; i++) {
