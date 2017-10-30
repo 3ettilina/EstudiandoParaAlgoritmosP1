@@ -18,6 +18,10 @@ public class NewMain {
         // TODO code application logic here
         TGrafoNoDirigido gnd = UtilGrafos.cargarGrafo("src/parcial2/grafonodirigido/verticesBEA_nuevo.txt", "src/parcial2/grafonodirigido/aristasBEA_nuevo.txt", false, TGrafoNoDirigido.class);
         System.out.println(gnd.bea("a"));
+//        System.out.println(gnd.esConexo("a"));
+//        System.out.println(gnd.bpf());
+        TCaminos losCaminos = gnd.todosLosCaminos("a", "d");
+        System.out.println(losCaminos.obtenerCaminoMasCaro().getCostoTotal());
 
         TGrafoNoDirigido aacm = gnd.Prim();
     }
