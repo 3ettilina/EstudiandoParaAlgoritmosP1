@@ -1,4 +1,4 @@
-package parcial2.implementaciones;
+package parcial2.implementaciones.grafodirigido;
 
 
 public class TAdyacencia implements IAdyacencia {

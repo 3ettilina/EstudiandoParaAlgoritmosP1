@@ -1,4 +1,4 @@
-package parcial2.implementaciones;
+package parcial2.implementaciones.grafodirigido;
 
 
 import java.util.Collection;
