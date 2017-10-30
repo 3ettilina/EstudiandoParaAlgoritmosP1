@@ -1,6 +1,7 @@
 package parcial2.grafodirigido;
 
 
+import UT4.TA5.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -157,57 +158,6 @@ public class UtilGrafos {
                     } else if (matriz[i][j].compareTo(Double.MAX_VALUE) == 0) {
                         System.out.print(rellenar(infinito, largo, ' '));
                     } else {
-                        System.out.print(rellenar(matriz[i][j].toString(), largo, ' '));
-                    }
-                }
-                System.out.println();
-                System.out.println(linea);
-            }
-        }
-        System.out.println();
-    }
-    
-    public static void imprimirMatrizMejoradoSoportaBoolean(Comparable[][] matriz, Map<Comparable, TVertice> vertices, String titulo) {
-        if (vertices != null && matriz.length == vertices.keySet().size()) {
-
-            Comparable[] etiquetas = vertices.keySet().toArray(new Comparable[vertices.keySet().size()]);
-            int etiquetaMasLarga = stringMasLargo(etiquetas);
-            int datoMasLargo = 0;
-            String nulo = "Nulo";
-            int separacionEntreColumnas = 3;
-
-            int largo = Math.max(etiquetaMasLarga, datoMasLargo) + separacionEntreColumnas;
-
-            for (int i = 0; i < etiquetas.length; i++) {
-                etiquetas[i] = rellenar(etiquetas[i].toString(), largo, ' ');
-            }
-
-            int tope = (largo) * (etiquetas.length + 1);
-
-            String linea = rellenar("", tope, '-');
-            String separador = rellenar("", largo, ' ');
-            String sepTitulo = rellenar("", tope, '*');
-
-            System.out.println(sepTitulo);
-            System.out.println(devolverCentrado(titulo, tope));
-            System.out.println(sepTitulo);
-            System.out.println(linea);
-
-            System.out.print(separador);
-            for (int i = 0; i < matriz.length; i++) {
-                System.out.print(etiquetas[i]);
-            }
-
-            System.out.println();
-            System.out.println(linea);
-
-            for (int i = 0; i < matriz.length; i++) {
-                System.out.print(etiquetas[i]);
-                for (int j = 0; j < matriz.length; j++) {
-
-                    if (matriz[i][j] == null) {
-                        System.out.print(rellenar(nulo, largo, ' '));
-                    }else {
                         System.out.print(rellenar(matriz[i][j].toString(), largo, ' '));
                     }
                 }

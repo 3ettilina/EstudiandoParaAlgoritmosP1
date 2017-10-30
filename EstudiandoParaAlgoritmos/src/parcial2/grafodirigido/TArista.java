@@ -1,5 +1,7 @@
 package parcial2.grafodirigido;
 
+import UT4.TA5.*;
+
 
 public class TArista implements IArista {
 
@@ -43,6 +45,10 @@ public class TArista implements IArista {
     @Override
     public void setCosto(double costo) {
         this.costo = costo;
+    }
+    
+    public TArista aristaInversa (){
+        return new TArista(this.getEtiquetaDestino(), this.getEtiquetaOrigen(),this.getCosto());
     }
 
     

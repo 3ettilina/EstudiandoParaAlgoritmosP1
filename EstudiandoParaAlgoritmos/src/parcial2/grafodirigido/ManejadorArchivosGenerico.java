@@ -1,6 +1,7 @@
 package parcial2.grafodirigido;
 
 
+import UT4.TA5.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;

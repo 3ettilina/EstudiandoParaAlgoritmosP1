@@ -1,21 +1,27 @@
 package parcial2.grafodirigido;
 
 
+import UT4.TA5.*;
+import java.util.Collection;
 import java.util.Map;
-
 
 public interface IGrafoDirigido {
 
-    
+    Collection<Comparable> bpf();
+
+    Collection<Comparable> bpf(TVertice vertice);
+
+    Collection<Comparable> bpf(Comparable etiquetaOrigen);
+
     /**
      * @return Etiqueta del centro del grafo
      */
     Comparable centroDelGrafo();
 
     /**
-     * Metodo encargado de eliminar una arista dada por un origen y destino.
-     * En caso de no existir la arista, retorna falso. En caso de que las
-     * etiquetas sean invalidas (no existe el vertice origen o el destino), retorna falso.
+     * Metodo encargado de eliminar una arista dada por un origen y destino. En
+     * caso de no existir la arista, retorna falso. En caso de que las etiquetas
+     * sean invalidas (no existe el vertice origen o el destino), retorna falso.
      */
     boolean eliminarArista(Comparable nomVerticeOrigen, Comparable nomVerticeDestino);
 
@@ -28,8 +34,9 @@ public interface IGrafoDirigido {
     boolean eliminarVertice(Comparable nombreVertice);
 
     /**
-     * Metodo encargado de verificar la existencia de una arista. Las
-     * etiquetas pasadas por parametro deben ser validas (o sea, los vértices origen y destino deben existir en el grafo).
+     * Metodo encargado de verificar la existencia de una arista. Las etiquetas
+     * pasadas por parametro deben ser validas (o sea, los vértices origen y
+     * destino deben existir en el grafo).
      *
      * @return True si existe la arista, false en caso contrario
      */
@@ -48,16 +55,19 @@ public interface IGrafoDirigido {
     boolean existeVertice(Comparable unaEtiqueta);
 
     /**
-     *ejecuta el algoritmo de Floyd en el grafo, para hallar los caminos mínimos entre todos los pares de vértices. 
-	  * @return una matriz de n x n (n = cantidad de vértices del grafo) con los costos de los caminos mínimos. 
+     * ejecuta el algoritmo de Floyd en el grafo, para hallar los caminos
+     * mínimos entre todos los pares de vértices.
+     *
+     * @return una matriz de n x n (n = cantidad de vértices del grafo) con los
+     * costos de los caminos mínimos.
      */
-    Double [][] floyd();
+    Double[][] floyd();
 
     /**
      * Metododouble encargado de insertar una arista en el grafo (con un cierto
-     * costo), dado su vertice origen y destino.- Para que la arista sea
-     * valida, se deben cumplir los siguientes casos: 1) Las etiquetas pasadas
-     * por parametros son validas.- 2) Los vertices (origen y destino) existen
+     * costo), dado su vertice origen y destino.- Para que la arista sea valida,
+     * se deben cumplir los siguientes casos: 1) Las etiquetas pasadas por
+     * parametros son validas.- 2) Los vertices (origen y destino) existen
      * dentro del grafo.- 3) No es posible ingresar una arista ya existente
      * (miso origen y mismo destino, aunque el costo sea diferente).- 4) El
      * costo debe ser mayor que 0.
@@ -80,11 +90,20 @@ public interface IGrafoDirigido {
 
     Comparable obtenerExcentricidad(Comparable etiquetaVertice);
 
-   /**
-     *ejecuta el algoritmo de Warshall para halla la cerradura transitiva del grafo. 
-	  * @return una matriz de n x n (n = cantidad de vértices del grafo) en la que sus celdas indican si hay (TRUE) o no (FALSE) conectividad entre cada par de vértices. 
+    /**
+     * ejecuta el algoritmo de Warshall para halla la cerradura transitiva del
+     * grafo.
+     *
+     * @return una matriz de n x n (n = cantidad de vértices del grafo) en la
+     * que sus celdas indican si hay (TRUE) o no (FALSE) conectividad entre cada
+     * par de vértices.
      */
-    Boolean[][] warshall();
-    
+    boolean[][] warshall();
+
     public Map<Comparable, TVertice> getVertices();
+
+    public void desvisitarVertices();
+
+    public TCaminos todosLosCaminos(Comparable etiquetaOrigen, Comparable etiquetaDestino);
+
 }

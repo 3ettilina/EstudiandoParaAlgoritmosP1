@@ -1,6 +1,8 @@
 package parcial2.grafodirigido;
 
 
+import UT4.TA5.*;
+import java.util.Collection;
 import java.util.LinkedList;
 
 /*
@@ -8,7 +10,6 @@ import java.util.LinkedList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Ernesto
@@ -31,11 +32,13 @@ public interface IVertice {
 
     boolean insertarAdyacencia(Double costo, TVertice verticeDestino);
 
-   
+    Double obtenerCostoAdyacencia(TVertice verticeDestino);
+
     TVertice primerAdyacente();
 
     void setVisitado(boolean valor);
 
-    
-    
+    public void bpf(Collection<Comparable> visitados);
+
+    public TCaminos todosLosCaminos(Comparable etVertDest, TCamino caminoPrevio, TCaminos todosLosCaminos);
 }

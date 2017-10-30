@@ -1,8 +1,10 @@
 package parcial2.grafodirigido;
 
 
+import UT4.TA5.*;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class TVertice implements IVertice{
 
@@ -45,7 +47,7 @@ public class TVertice implements IVertice{
         return null;
     }
 
-
+    @Override
     public Double obtenerCostoAdyacencia(TVertice verticeDestino) {
         TAdyacencia ady = buscarAdyacencia(verticeDestino);
         if (ady != null) {
@@ -81,7 +83,6 @@ public class TVertice implements IVertice{
         return null;
     }
 
-    
 
     @Override
     public TAdyacencia buscarAdyacencia(Comparable etiquetaDestino) {
@@ -98,7 +99,93 @@ public class TVertice implements IVertice{
         return datos; 
     }
 
+    @Override
+    public void bpf(Collection<Comparable> visitados) {
+        setVisitado(true);
+        visitados.add(this.getEtiqueta());
+        for (TAdyacencia adyacente : adyacentes) {
+            TVertice vertAdy = adyacente.getDestino();
+            if (!vertAdy.getVisitado()) {
+                vertAdy.bpf(visitados);
+            }
+        }
+    }
+    
+    public boolean tieneCiclo(TCamino camino){
+      boolean ciclo =false;
+      this.setVisitado(true);
+      for (TAdyacencia adyacente : adyacentes) {
+          TVertice destino = adyacente.getDestino();
+          if(destino.visitado){
+              if(camino.contiene(destino.etiqueta)){
+                  camino.agregarAdyacencia(adyacente);
+                  return true;
+              }
+              else{
+                  camino.agregarAdyacencia(adyacente);
+                  ciclo = destino.tieneCiclo(camino);
+              }              
+          }
+          else{
+              camino.agregarAdyacencia(adyacente);
+              ciclo = destino.tieneCiclo(camino);
+          }
+          camino.eliminarAdyacencia(adyacente);
+          
+      }
+      
+      return ciclo;
+  }
+    
     
 
-
+    @Override
+    public TCaminos todosLosCaminos(Comparable etVertDest, TCamino caminoPrevio, TCaminos todosLosCaminos) {
+        this.setVisitado(true);
+        for (TAdyacencia adyacente : adyacentes) {
+            TVertice destino = adyacente.getDestino();
+            if(!destino.getVisitado()){
+                if(destino.getEtiqueta().compareTo(etVertDest) == 0){
+                    TCamino copia = caminoPrevio.copiar();
+                    copia.agregarAdyacencia(adyacente);
+                    todosLosCaminos.getCaminos().add(copia);
+                }
+                else{
+                    
+                    caminoPrevio.agregarAdyacencia(adyacente);
+                    destino.todosLosCaminos(etVertDest, caminoPrevio, todosLosCaminos);     
+                    caminoPrevio.eliminarAdyacencia(adyacente);
+                }
+            }
+        }
+        this.setVisitado(false);
+        return todosLosCaminos;   
+        }
+    
+    
+    
+    
+    public String bea(){        
+        Queue<TVertice> c = new LinkedList<>();
+        String resultado = "";
+        TVertice x;
+        TVertice y;
+        this.setVisitado(true);
+        c.add(this);
+        resultado += this.getEtiqueta() + " - ";
+        while(!c.isEmpty()){
+            x= c.remove();
+            for (TAdyacencia i : x.getAdyacentes()){
+                y= i.getDestino();
+                if (!y.getVisitado()){
+                    y.setVisitado(true);
+                    c.add(y);
+                    resultado += y.etiqueta + " - ";
+                }
+            }
+        }
+        return resultado;
+    }
 }
+
+

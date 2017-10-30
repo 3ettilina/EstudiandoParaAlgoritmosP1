@@ -1,5 +1,7 @@
 package parcial2.grafodirigido;
 
+import UT4.TA5.*;
+
 
 public class TAdyacencia implements IAdyacencia {
    
