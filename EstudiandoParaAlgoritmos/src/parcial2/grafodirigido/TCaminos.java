@@ -37,6 +37,28 @@ public class TCaminos {
         return caminos;
     }
     
+    public TCamino obtenerCaminoMasBarato(){
+        Double min = Double.MAX_VALUE;
+        TCamino cami = null;
+        for (TCamino camino : caminos){
+            if (min>camino.getCostoTotal()){
+                min = camino.getCostoTotal();
+                cami = camino;
+            }
+        }
+        return cami;
+    }
     
+    public TCamino obtenerCaminoMasCaro(){
+        Double max = -1.0;
+        TCamino cami = null;
+        for (TCamino camino : caminos){
+            if (max<camino.getCostoTotal()){
+                max = camino.getCostoTotal();
+                cami = camino;
+            }
+        }
+        return cami;
+    }
     
 }
