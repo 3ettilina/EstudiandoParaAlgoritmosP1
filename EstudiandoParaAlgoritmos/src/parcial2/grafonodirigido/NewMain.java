@@ -16,9 +16,9 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        TGrafoNoDirigido gnd = UtilGrafos.cargarGrafo("src/parcial2/grafonodirigido/verticesGND.txt", "src/parcial2/grafonodirigido/aristasGND.txt", false, TGrafoNoDirigido.class);
+        TGrafoNoDirigido gnd = UtilGrafos.cargarGrafo("src/parcial2/grafonodirigido/verticesBEA_nuevo.txt", "src/parcial2/grafonodirigido/aristasBEA_nuevo.txt", false, TGrafoNoDirigido.class);
+        System.out.println(gnd.bea("a"));
 
         TGrafoNoDirigido aacm = gnd.Prim();
     }
-
 }
