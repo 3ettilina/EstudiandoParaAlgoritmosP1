@@ -6,7 +6,7 @@ public class PruebaGrafo {
 
 //        TGrafoDirigido gd = (TGrafoDirigido) UtilGrafos.cargarGrafo("src/UT04/TA03/ejemploClaseAeropuertos.txt", "src/UT04/TA03/ejemploClaseConexiones.txt",
 //                false, TGrafoDirigido.class);
-        TGrafoDirigido gd = (TGrafoDirigido) UtilGrafos.cargarGrafo("src/UT04/TA03/aeropuertos_1.txt", "src/UT04/TA03/conexiones_1.txt",
+        TGrafoDirigido gd = (TGrafoDirigido) UtilGrafos.cargarGrafo("src/parcial2/implementaciones/aeropuertos_1.txt", "src/parcial2/implementaciones/conexiones_1.txt",
                 false, TGrafoDirigido.class);
 
         Object[] etiquetasarray = gd.getEtiquetasOrdenado();
