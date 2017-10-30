@@ -1,4 +1,4 @@
-package parcial2.implementaciones.grafodirigido;
+package parcial2.grafodirigido;
 
 
 import java.io.BufferedReader;

@@ -1,4 +1,4 @@
-package parcial2.implementaciones.grafodirigido;
+package parcial2.grafodirigido;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
