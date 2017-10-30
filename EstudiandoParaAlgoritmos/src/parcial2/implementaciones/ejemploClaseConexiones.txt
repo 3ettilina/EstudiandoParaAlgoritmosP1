@@ -1,0 +1,6 @@
+Montevideo,Punta_del_Este,150
+Porto_Alegre,Montevideo,300
+Porto_Alegre,Punta_del_Este,390
+San_Pablo,Montevideo,400
+San_Pablo,Porto_Alegre,200
+Punta_del_Este,San_Pablo,410
