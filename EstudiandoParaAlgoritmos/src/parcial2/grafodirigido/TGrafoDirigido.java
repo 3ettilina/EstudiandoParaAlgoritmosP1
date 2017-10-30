@@ -246,13 +246,6 @@ public class TGrafoDirigido implements IGrafoDirigido {
         return vertices;
     }
 
-    @Override
-    public Collection<Comparable> bpf(TVertice vertice) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-
     public Collection<Comparable> bpf(Comparable etiquetaOrigen) {
         TVertice origen = this.buscarVertice(etiquetaOrigen);
         Collection<Comparable> visitados = new LinkedList <Comparable>();
@@ -263,16 +256,25 @@ public class TGrafoDirigido implements IGrafoDirigido {
             System.out.println(etiqueta);
         }
         return visitados;
-
     }
-
     
-    /**
-     * BPF del grafo, a partir del primer vértice, para todos los vertices
-     */
-    @Override
+    public Collection<Comparable> bpf(TVertice origen) {
+        Comparable etiqueta = origen.getEtiqueta();
+        return bpf(etiqueta);
+    }
+    
     public Collection<Comparable> bpf() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Collection<Comparable> visitados = new LinkedList <Comparable>();
+        Collection<TVertice> vertices = this.vertices.values();
+        for (TVertice vertice : vertices ) {
+            if (vertice != null && vertice.getVisitado() == false ){
+                vertice.bpf(visitados);
+            }
+        }
+        for (Comparable etiqueta : visitados){
+            System.out.println(etiqueta);
+        }
+        return visitados;
     }
 
     @Override

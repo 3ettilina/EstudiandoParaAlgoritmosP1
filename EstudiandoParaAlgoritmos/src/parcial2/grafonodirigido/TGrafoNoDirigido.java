@@ -79,4 +79,18 @@ public class TGrafoNoDirigido extends TGrafoDirigido {
     private TVertice buscarVertice(Comparable unaEtiqueta) {
         return getVertices().get(unaEtiqueta);
     }
+    
+    public boolean esConexo (Comparable unaEtiqueta){ 
+        Collection<Comparable> visitados = new LinkedList <Comparable>();
+        Collection<TVertice> vertices1 = this.getVertices().values();
+        TVertice vertice = this.getVertices().get(unaEtiqueta);
+        if (vertice != null && vertice.getVisitado() == false ){
+            vertice.bpf(visitados);
+        }
+        if (visitados.size()==vertices1.size()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
