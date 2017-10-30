@@ -293,19 +293,19 @@ public class TGrafoDirigido implements IGrafoDirigido {
     }    
         public boolean tieneCiclo(){
             LinkedList <TCamino> listaCiclos=new LinkedList();
-        if(vertices.isEmpty()){
-            return false;
-        }
-        else{
-            for (TVertice vertice : vertices.values()) {
-                TCamino camino = new TCamino(vertice);
-                if (!vertice.getVisitado() == false){
-                    if(vertice.tieneCiclo(camino)){
-                        listaCiclos.add(camino);
-                        return true;
+            if(vertices.isEmpty()){
+                return false;
+            }
+            else{
+                for (TVertice vertice : vertices.values()) {
+                    TCamino camino = new TCamino(vertice);
+                    if (!vertice.getVisitado() == false){
+                        if(vertice.tieneCiclo(camino)){
+                            listaCiclos.add(camino);
+                            return true;
+                        }
                     }
                 }
-            }
             return false;  
         }
     }
