@@ -135,7 +135,7 @@ public class TClasificador {
      * @param datosParaClasificar
      * @return
      */
-    protected int[] ordenarPorInsercion(int[] datosParaClasificar) {
+    public int[] ordenarPorInsercion(int[] datosParaClasificar) {
         if (datosParaClasificar != null) {
             for (int i = 1; i < datosParaClasificar.length; i++) {
                 int j = i - 1;
@@ -149,7 +149,7 @@ public class TClasificador {
         return null;
     }
 
-    private int[] ordenarPorBurbuja(int[] datosParaClasificar) {
+    public int[] ordenarPorBurbuja(int[] datosParaClasificar) {
         //  datosParaClasificar = null;
         int n = datosParaClasificar.length - 1;
         for (int i = 0; i <= n; i++) {
@@ -171,12 +171,12 @@ public class TClasificador {
         return true;
     }
 
-    protected int[] ordenarPorQuickSort(int[] datosParaClasificar) {
+    public int[] ordenarPorQuickSort(int[] datosParaClasificar) {
         quicksort(datosParaClasificar, 0, datosParaClasificar.length - 1);
         return datosParaClasificar;
     }
 
-    private int[] quicksort(int[] entrada, int i, int j) {
+    public int[] quicksort(int[] entrada, int i, int j) {
         int izquierda = i;
         int derecha = j;
         int posicionPivote = encuentraPivote1(izquierda, derecha);
@@ -205,53 +205,51 @@ public class TClasificador {
         return entrada;
     }
 
-    private int encuentraPivote(int izq, int der) {
+    public int encuentraPivote(int izq, int der) {
         if (izq == der) {
             return -1;
         }
         return ((izq + der) / 2);
     }
 
-    private int encuentraPivote1(int izq, int der) {
+    public int encuentraPivote1(int izq, int der) {
         Random rand = new Random();
         int randomNum = rand.nextInt((der - izq)) + izq;
         return randomNum;
     }
 
-    private int encuentraPivote2(int izq, int der) {
+    public int encuentraPivote2(int izq, int der) {
         if (izq == der) {
             return -1;
         }
         return ((izq + der) / 2);
     }
 
-    protected int[] usarCascara(int[] datosParaClasificar) {
+    public int[] usarCascara(int[] datosParaClasificar) {
         if (datosParaClasificar != null) {
             return datosParaClasificar;
         }
         return null;
     }
 
-    protected int[] ordenarPorHeapsort(int[] datosParaClasificar) {
+    public int[] ordenarPorHeapsort(int[] datosParaClasificar) {
         for (int i = (datosParaClasificar.length - 1) / 2; i >= 0; i--) { //Armo el heap inicial de n-1 div 2 hasta 0
             armaHeap(datosParaClasificar, i, datosParaClasificar.length - 1);
         }
-        for (int i = datosParaClasificar.length - 1; i > 1; i--) { //PrimerErrorMayorIgual
+        for (int i = datosParaClasificar.length - 1; i >= 1; i--) {
             intercambiar(datosParaClasificar, 0, i);
             armaHeap(datosParaClasificar, 0, i - 1);
         }
         return datosParaClasificar;
     }
 
-    private void armaHeap(int[] datosParaClasificar, int primero, int ultimo) {
+    public void armaHeap(int[] datosParaClasificar, int primero, int ultimo) {
         if (primero < ultimo) {
             int r = primero;
             while (r <= ultimo / 2) {
                 if (ultimo == 2 * r) { //r tiene un hijo solo
                     if (datosParaClasificar[r] > datosParaClasificar[r * 2]) {
                         intercambiar(datosParaClasificar, r, 2 * r);
-                        //r = 2 ;
-                        //} else {
                     }
                     r = ultimo;
                 } else { //r tiene 2 hijos
@@ -272,12 +270,11 @@ public class TClasificador {
         }
     }
 
-    private int[] ordenarPorSeleccionDirecta(int[] datosParaClasificar) {
-        int tamañoDatos = datosParaClasificar.length;
-        for (int i = 1; i < tamañoDatos - 1; i++) {
+    public int[] ordenarPorSeleccionDirecta(int[] datosParaClasificar) {
+        for (int i = 0; i < datosParaClasificar.length - 1; i++) {
             int indiceDelMenor = i;
             int claveMenor = datosParaClasificar[i];
-            for (int j = i + 1; j < tamañoDatos; j++) {
+            for (int j = i + 1; j < datosParaClasificar.length; j++) {
                 if (datosParaClasificar[j] < claveMenor) {
                     indiceDelMenor = j;
                     claveMenor = datosParaClasificar[j];
@@ -288,17 +285,17 @@ public class TClasificador {
         return datosParaClasificar;
     }
 
-    private int[] ordenarPorArraysSort(int[] datosParaClasificar) {
+    public int[] ordenarPorArraysSort(int[] datosParaClasificar) {
         Arrays.sort(datosParaClasificar);
         return datosParaClasificar;
     }
 
-    private int[] ordenarPorParallelSort(int[] datosParaClasificar) {
+    public int[] ordenarPorParallelSort(int[] datosParaClasificar) {
         Arrays.parallelSort(datosParaClasificar);
         return datosParaClasificar;
     }
 
-    private int[] ordenarPorCuentasPorDistribucion(int[] array) {
+    public int[] ordenarPorCuentasPorDistribucion(int[] array) {
         int[] aux = new int[array.length];
 
         int min = array[0];
@@ -329,7 +326,7 @@ public class TClasificador {
         return aux;
     }
 
-    private int[] ordenarPorBucketSort(int[] array) {
+    public int[] ordenarPorBucketSort(int[] array) {
         int cantidadUrnas = 10;
 
         if (array.length == 0) {
@@ -370,5 +367,4 @@ public class TClasificador {
         }
         return array;
     }
-
 }
