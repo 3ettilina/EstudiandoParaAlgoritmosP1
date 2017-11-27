@@ -20,6 +20,7 @@ public class TClasificadorTest {
     TClasificador clasificador;
     int[] elementosOrdenadosAscendentemente;
     int[] elementosOrdenadosAleatoriamente;
+    int[] elementosEspeciales;
 
     public TClasificadorTest() {
         gdg = new GeneradorDatosGenericos();
@@ -30,6 +31,7 @@ public class TClasificadorTest {
     public void setUp() {
         elementosOrdenadosAscendentemente = gdg.generarDatosAscendentes(300);
         elementosOrdenadosAleatoriamente = gdg.generarDatosAleatorios(300);
+        elementosEspeciales = gdg.generarDatosEspeciales();
     }
 
     /**
@@ -93,7 +95,8 @@ public class TClasificadorTest {
      */
     @Test
     public void testOrdenarPorCuentasPorDistribucion() {
-
+        int[] arrayOrdenados = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4};
+        Assert.assertArrayEquals(arrayOrdenados, clasificador.ordenarPorCuentasPorDistribucion(elementosEspeciales));
     }
 
     /**
