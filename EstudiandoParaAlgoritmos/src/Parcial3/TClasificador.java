@@ -219,11 +219,11 @@ public class TClasificador {
         return randomNum;
     }
 
-    public int encuentraPivote2(int izq, int der) {
-        if (izq == der) {
-            return -1;
+    private int encuentraPivote2(int[] entrada, int izq, int der) {
+        if (entrada[izq] < entrada[izq + 1]) {
+            return izq;
         }
-        return ((izq + der) / 2);
+        return izq + 1;
     }
 
     public int[] usarCascara(int[] datosParaClasificar) {
@@ -378,7 +378,7 @@ public class TClasificador {
         }
         for (int i = 0; i < datosParaClasificar.length; i++) {
             int clave = datosParaClasificar[i];
-            int dms = this.DMS(clave,cifrasMax);
+            int dms = this.DMS(clave, cifrasMax);
             LinkedList urna = urnas.get(dms);
             urna.add(clave);
         }
@@ -395,10 +395,10 @@ public class TClasificador {
         return datosParaClasificar;
     }
 
-    public int DMS(int numero,int cifras) {
+    public int DMS(int numero, int cifras) {
         String n = numero + "";
         String dms = "0";
-        if (n.length() > cifras-1) {
+        if (n.length() > cifras - 1) {
             dms = n.charAt(0) + "";
         }
 
