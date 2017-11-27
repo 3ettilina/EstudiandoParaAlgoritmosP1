@@ -280,7 +280,7 @@ public class TClasificador {
                     claveMenor = datosParaClasificar[j];
                 }
             }
-            intercambiar(datosParaClasificar, datosParaClasificar[i], datosParaClasificar[indiceDelMenor]);
+            intercambiar(datosParaClasificar, i, indiceDelMenor);
         }
         return datosParaClasificar;
     }
