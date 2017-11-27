@@ -356,7 +356,7 @@ public class TClasificador {
             buckets.get((array[i] - minValue) / cantidadUrnas).add(array[i]);
         }
 
-        // Sort buckets and place back into input array
+        // Ordenamos las urnas y las colocamos nuevamente en el array
         int currentIndex = 0;
         for (int i = 0; i < buckets.size(); i++) {
             Integer[] bucketArray = new Integer[buckets.get(i).size()];
@@ -368,41 +368,41 @@ public class TClasificador {
         }
         return array;
     }
-    
-        public int[] radixSort(int[] datosParaClasificar){
-            Integer max = datosParaClasificar[0];
-            for(int i = 1; i < datosParaClasificar.length; i++){
-                if(datosParaClasificar[i] > max){               //me quedo con el de mayor digitos
-                    max = datosParaClasificar[i];
-                }
+
+    public int[] radixSort(int[] datosParaClasificar) {
+        Integer max = datosParaClasificar[0];
+        for (int i = 1; i < datosParaClasificar.length; i++) {
+            if (datosParaClasificar[i] > max) {               //me quedo con el de mayor digitos
+                max = datosParaClasificar[i];
             }
-            int digitos = max.toString().length();
-
-            for(int i = digitos -1 ; i >= 0; i--){
-                LinkedList[] vector = new LinkedList[10];         //vector de listas de 0 a 9
-                for(int m = 0; m < vector.length; m++){
-                    vector[m] = new LinkedList();
-                }
-                for(int j = 0; j < datosParaClasificar.length; j++){ //recorro todo el vector
-                    String lugarEnUrna = String.valueOf(datosParaClasificar[j]);
-                    while(lugarEnUrna.length() < digitos ){
-                        lugarEnUrna="0"+lugarEnUrna;
-                    }
-                    char var = lugarEnUrna.toCharArray()[i];
-                    Integer varInt = Integer.parseInt(var+"");
-                    vector[varInt].add(datosParaClasificar[j]);
-
-                }
-                //concatenamos la lista, armamos datos para clasificar ordenado 
-                int cont= 0;
-                for(int h = 0; h < vector.length; h++){
-                    for(int k = 0; k < vector[h].size(); k++){
-                        datosParaClasificar[cont] = (Integer) vector[h].get(k);
-                        cont++;
-                    }
-                }
-
-            }
-            return datosParaClasificar;
         }
+        int digitos = max.toString().length();
+
+        for (int i = digitos - 1; i >= 0; i--) {
+            LinkedList[] vector = new LinkedList[10];         //vector de listas de 0 a 9
+            for (int m = 0; m < vector.length; m++) {
+                vector[m] = new LinkedList();
+            }
+            for (int j = 0; j < datosParaClasificar.length; j++) { //recorro todo el vector
+                String lugarEnUrna = String.valueOf(datosParaClasificar[j]);
+                while (lugarEnUrna.length() < digitos) {
+                    lugarEnUrna = "0" + lugarEnUrna;
+                }
+                char var = lugarEnUrna.toCharArray()[i];
+                Integer varInt = Integer.parseInt(var + "");
+                vector[varInt].add(datosParaClasificar[j]);
+
+            }
+            //concatenamos la lista, armamos datos para clasificar ordenado 
+            int cont = 0;
+            for (int h = 0; h < vector.length; h++) {
+                for (int k = 0; k < vector[h].size(); k++) {
+                    datosParaClasificar[cont] = (Integer) vector[h].get(k);
+                    cont++;
+                }
+            }
+
+        }
+        return datosParaClasificar;
+    }
 }

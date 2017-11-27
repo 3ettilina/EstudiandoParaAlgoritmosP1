@@ -106,7 +106,7 @@ public class TClasificadorTest {
     public void testOrdenarPorBucketSort() {
         Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.ordenarPorBucketSort(elementosOrdenadosAleatoriamente));
     }
-    
+
     @Test
     public void testOrdenarPorRadixSort() {
         Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.radixSort(elementosOrdenadosAleatoriamente));
