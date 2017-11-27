@@ -26,6 +26,7 @@ public class MainCascara {
 //        PARALLEL_SORT = 7;
 //        CUENTAS_POR_DISTRIBUCION = 8;
 //        BUCKETSORT = 9; //Solo funciona de 0 a 999, en caso de precisar ordenar valores de 4 cifras hay que modificar la variable cantidadUrnas
+//        RADIXSORT = 10;
         int[] metodosDeClasificacion = {9};
         int[] tamañosArrays = {1000, 2000, 5000, 10000, 15000, 20000, 50000, 75000, 100000, 125000};
 //        int[] tamañosArrays = {999};

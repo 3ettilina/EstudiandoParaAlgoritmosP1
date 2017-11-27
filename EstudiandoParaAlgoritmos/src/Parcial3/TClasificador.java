@@ -18,6 +18,7 @@ public class TClasificador {
     public static final int METODO_CLASIFICACION_PARALLEL_SORT = 7;
     public static final int METODO_CLASIFICACION_CUENTAS_POR_DISTRIBUCION = 8;
     public static final int METODO_CLASIFICACION_BUCKETSORT = 9;
+    public static final int METODO_CLASIFICACION_RADIXSORT = 10;
 
     /**
      * Punto de entrada al clasificador
@@ -89,6 +90,12 @@ public class TClasificador {
                     return usarCascara(datosParaClasificar);
                 } else {
                     return ordenarPorBucketSort(datosParaClasificar);
+                }
+            case METODO_CLASIFICACION_RADIXSORT:
+                if (cascara) {
+                    return usarCascara(datosParaClasificar);
+                } else {
+                    return ordenarPorRadixSort(datosParaClasificar);
                 }
             default:
                 System.err.println("Este codigo no deberia haberse ejecutado");
@@ -220,7 +227,7 @@ public class TClasificador {
     }
 
     private int encuentraPivote2(int[] entrada, int izq, int der) {
-        if (entrada[izq] < entrada[izq + 1]) {
+        if (entrada[izq] > entrada[izq + 1]) {
             return izq;
         }
         return izq + 1;
@@ -405,7 +412,7 @@ public class TClasificador {
         return Integer.parseInt(dms);
     }
 
-    public int[] radixSort(int[] datosParaClasificar) {
+    public int[] ordenarPorRadixSort(int[] datosParaClasificar) {
         Integer max = datosParaClasificar[0];
         for (int i = 1; i < datosParaClasificar.length; i++) {
             if (datosParaClasificar[i] > max) {               //me quedo con el de mayor digitos

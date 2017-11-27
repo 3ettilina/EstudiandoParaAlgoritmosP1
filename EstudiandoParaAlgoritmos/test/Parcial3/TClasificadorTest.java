@@ -114,6 +114,6 @@ public class TClasificadorTest {
 
     @Test
     public void testOrdenarPorRadixSort() {
-        Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.radixSort(elementosOrdenadosAleatoriamente));
+        Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.ordenarPorRadixSort(elementosOrdenadosAleatoriamente));
     }
 }
