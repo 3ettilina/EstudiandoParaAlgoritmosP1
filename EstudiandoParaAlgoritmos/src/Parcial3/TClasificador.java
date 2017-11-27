@@ -370,8 +370,8 @@ public class TClasificador {
     }
 
     public int[] ordenarPorBinSort(int[] datosParaClasificar) {
-        int cantidadUrnas = 10;
-        int cifrasMax = 3;
+        int cantidadUrnas = 10; //si cms va de 0 a 9 -> 10; si va de 0 a 5 -> 6
+        int cifrasMax = 3; // del 0-9 = 1; 0-99 = 2; 0-999 = 3 etc
         ArrayList<LinkedList> urnas = new ArrayList<>(cantidadUrnas);
         for (int i = 0; i < cantidadUrnas; i++) {
             urnas.add(new LinkedList());
