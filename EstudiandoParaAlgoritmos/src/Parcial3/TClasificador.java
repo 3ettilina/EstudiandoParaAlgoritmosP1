@@ -369,6 +369,41 @@ public class TClasificador {
         return array;
     }
 
+    public int[] ordenarPorBinSort(int[] datosParaClasificar) {
+        int cantidadUrnas = 10;
+        ArrayList<LinkedList> urnas = new ArrayList<>(cantidadUrnas);
+        for (int i = 0; i < cantidadUrnas; i++) {
+            urnas.add(new LinkedList());
+        }
+        for (int i = 0; i < datosParaClasificar.length; i++) {
+            int clave = datosParaClasificar[i];
+            int dms = this.DMS(clave);
+            LinkedList urna = urnas.get(dms);
+            urna.add(clave);
+        }
+
+        int currentIndex = 0;
+        for (int i = 0; i < cantidadUrnas; i++) {
+            Object[] bucketArray = new Object[urnas.get(i).size()];
+            bucketArray = urnas.get(i).toArray();
+            Arrays.sort(bucketArray);
+            for (int j = 0; j < bucketArray.length; j++) {
+                datosParaClasificar[currentIndex++] = (int) bucketArray[j];
+            }
+        }
+        return datosParaClasificar;
+    }
+
+    public int DMS(int numero) {
+        String n = numero + "";
+        String dms = "0";
+        if (n.length() > 1) {
+            dms = n.charAt(0) + "";
+        }
+
+        return Integer.parseInt(dms);
+    }
+
     public int[] radixSort(int[] datosParaClasificar) {
         Integer max = datosParaClasificar[0];
         for (int i = 1; i < datosParaClasificar.length; i++) {

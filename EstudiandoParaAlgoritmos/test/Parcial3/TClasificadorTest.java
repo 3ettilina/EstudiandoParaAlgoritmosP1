@@ -29,8 +29,8 @@ public class TClasificadorTest {
 
     @Before
     public void setUp() {
-        elementosOrdenadosAscendentemente = gdg.generarDatosAscendentes(300);
-        elementosOrdenadosAleatoriamente = gdg.generarDatosAleatorios(300);
+        elementosOrdenadosAscendentemente = gdg.generarDatosAscendentes(100);
+        elementosOrdenadosAleatoriamente = gdg.generarDatosAleatorios(100);
         elementosEspeciales = gdg.generarDatosEspeciales();
     }
 
@@ -105,6 +105,11 @@ public class TClasificadorTest {
     @Test
     public void testOrdenarPorBucketSort() {
         Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.ordenarPorBucketSort(elementosOrdenadosAleatoriamente));
+    }
+    
+    @Test
+    public void testOrdenarPorBinSort() {
+        Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.ordenarPorBinSort(elementosOrdenadosAleatoriamente));
     }
 
     @Test
