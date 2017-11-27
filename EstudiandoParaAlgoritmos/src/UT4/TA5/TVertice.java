@@ -127,6 +127,5 @@ public class TVertice implements IVertice {
         }
         this.setVisitado(false);
         return todosLosCaminos;
-            
         }
 }

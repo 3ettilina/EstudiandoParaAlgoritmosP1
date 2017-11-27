@@ -1,6 +1,5 @@
 package UT5.CodigoBase;
 
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -42,7 +41,6 @@ public class TAristas extends LinkedList<TArista> {
         TArista tAMin = null;
         Double costoMin = Double.POSITIVE_INFINITY;
 
-       
         //---------COMPLETAR ALGORITMO--------
         // para todo u en Vertices U
         // para todo v en Vertices V

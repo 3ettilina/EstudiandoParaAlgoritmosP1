@@ -1,156 +1,160 @@
 package UT7.TA2;
 
-
-
 import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import static java.time.Clock.system;
 
 public class TClasificador {
-	public static final int METODO_CLASIFICACION_INSERCION = 1;
-	public static final int METODO_CLASIFICACION_SHELL = 2;
-	public static final int METODO_CLASIFICACION_BURBUJA = 3;
-        public static final int METODO_CLASIFICACION_QUICK=4;
-        public static final int METODO_CLASIFICACION_HEAP=5;
 
-	/**
-	 * Punto de entrada al clasificador
-	 * 
-	 * @param metodoClasificacion
-	 * @param orden
-	 * @param tamanioVector
-	 * @return Un vector del tam. solicitado, ordenado por el algoritmo solicitado
-	 */
-	public int[] clasificar(int[] datosParaClasificar, int metodoClasificacion) {
-		switch (metodoClasificacion) {
-		case METODO_CLASIFICACION_INSERCION:
-			return ordenarPorInsercion(datosParaClasificar);
-		case METODO_CLASIFICACION_SHELL:
-			return ordenarPorShell(datosParaClasificar);
-		case METODO_CLASIFICACION_BURBUJA:
-			return ordenarPorBurbuja(datosParaClasificar);
-                case METODO_CLASIFICACION_QUICK:
-                        return ordenarPorQuickSort(datosParaClasificar,0,datosParaClasificar.length-1);
-                case METODO_CLASIFICACION_HEAP:
-                        return ordenarPorHeapSort(datosParaClasificar);
-		default:
-			System.err.println("Este codigo no deberia haberse ejecutado");
-			break;
-		}
-		return datosParaClasificar;
-	}
+    public static final int METODO_CLASIFICACION_INSERCION = 1;
+    public static final int METODO_CLASIFICACION_SHELL = 2;
+    public static final int METODO_CLASIFICACION_BURBUJA = 3;
+    public static final int METODO_CLASIFICACION_QUICK = 4;
+    public static final int METODO_CLASIFICACION_HEAP = 5;
 
-	private void intercambiar(int[] vector, int pos1, int pos2) {
-		int temp = vector[pos2];
-		vector[pos2] = vector[pos1];
-		vector[pos1] = temp;
-	}
+    /**
+     * Punto de entrada al clasificador
+     *
+     * @param metodoClasificacion
+     * @param orden
+     * @param tamanioVector
+     * @return Un vector del tam. solicitado, ordenado por el algoritmo
+     * solicitado
+     */
+    public int[] clasificar(int[] datosParaClasificar, int metodoClasificacion) {
+        switch (metodoClasificacion) {
+            case METODO_CLASIFICACION_INSERCION:
+                return ordenarPorInsercion(datosParaClasificar);
+            case METODO_CLASIFICACION_SHELL:
+                return ordenarPorShell(datosParaClasificar);
+            case METODO_CLASIFICACION_BURBUJA:
+                return ordenarPorBurbuja(datosParaClasificar);
+            case METODO_CLASIFICACION_QUICK:
+                return ordenarPorQuickSort(datosParaClasificar, 0, datosParaClasificar.length - 1);
+            case METODO_CLASIFICACION_HEAP:
+                return ordenarPorHeapSort(datosParaClasificar);
+            default:
+                System.err.println("Este codigo no deberia haberse ejecutado");
+                break;
+        }
+        return datosParaClasificar;
+    }
 
+    private void intercambiar(int[] vector, int pos1, int pos2) {
+        int temp = vector[pos2];
+        vector[pos2] = vector[pos1];
+        vector[pos1] = temp;
+    }
 
-	/**
-	 * @param datosParaClasificar
-	 * @return
-	 */
-	private int[] ordenarPorShell(int[] datosParaClasificar) {
-		int j;
-		int[] incrementos = new int[] { 5, 3, 1 };
+    /**
+     * @param datosParaClasificar
+     * @return
+     */
+    private int[] ordenarPorShell(int[] datosParaClasificar) {
+        int j;
+        int[] incrementos = new int[]{5, 3, 1};
 
-		for (int inc : incrementos) {
-			if (inc < (datosParaClasificar.length / 2)) {
-				for (int i = inc; i < datosParaClasificar.length; i++) {
-                                        int aux = datosParaClasificar[i];
-					j = i;
-					while (j >= inc && aux < datosParaClasificar[j - inc]) {
-                                            //intercambiar(datosParaClasificar, j, j + inc);
-                                            datosParaClasificar[j] = datosParaClasificar[j - inc];
-                                            j -= inc;                
-					}
-                                    datosParaClasificar[j] = aux;
-				}
-			}
-		}
-		return datosParaClasificar;
-	}
-
-
-	/**
-	 * @param datosParaClasificar
-	 * @return
-	 */
-	protected int[] ordenarPorInsercion(int[] datosParaClasificar) {
-		if (datosParaClasificar != null) {
-                        //i = 0 lo modificamos por i = 1 ya que este algoritmo inicia en el segundo elemento
-			for (int i = 1; i < datosParaClasificar.length; i++) {
-				int j = i - 1;
-                                // esta al reves datosParaClasificar[j + 1] > datosParaClasificar[j] por datosParaClasificar[j] > datosParaClasificar[j + 1]
-				while ((j >= 0) && (datosParaClasificar[j] > datosParaClasificar[j + 1])) {
-					intercambiar(datosParaClasificar, j, j + 1);
-					j--;
-				}
-			}
-			return datosParaClasificar;
-		}
-		return null;
-	}
-
-	private int[] ordenarPorBurbuja(int[] datosParaClasificar) {
-            // deshabilito la linea 88 no deberia estar
-		//datosParaClasificar = null;
-		int n = datosParaClasificar.length - 1;
-		for (int i = 0; i <= n; i++) {
-			for (int j = n; j >= (i + 1); j--) {
-				if (datosParaClasificar[j] < datosParaClasificar[j - 1]) {
-					intercambiar(datosParaClasificar, j - 1, j);
-				}
-			}
-		}
-		return datosParaClasificar;
-	}
-    
-    
-        public boolean estaOrdenado(int[] vector){
-            boolean res=true;
-            //recorro el vector
-            for(int i=0;i<vector.length-1;i++){
-                //si algun elemento es mayor al siguiente entonces no esta ordenada, seteo res en false y break.
-                if(vector[i]>vector[i+1]){
-                    res=false;
-                    break;
+        for (int inc : incrementos) {
+            if (inc < (datosParaClasificar.length / 2)) {
+                for (int i = inc; i < datosParaClasificar.length; i++) {
+                    int aux = datosParaClasificar[i];
+                    j = i;
+                    while (j >= inc && aux < datosParaClasificar[j - inc]) {
+                        //intercambiar(datosParaClasificar, j, j + inc);
+                        datosParaClasificar[j] = datosParaClasificar[j - inc];
+                        j -= inc;
+                    }
+                    datosParaClasificar[j] = aux;
                 }
             }
-            return res;
         }
-        
-    public int encuentraPivote(int i, int j, int [] vector)
-    {
-        return vector[(i + j)/2];
+        return datosParaClasificar;
     }
-        
-    int particion(int[] vector, int left, int right){
+
+    /**
+     * @param datosParaClasificar
+     * @return
+     */
+    protected int[] ordenarPorInsercion(int[] datosParaClasificar) {
+        if (datosParaClasificar != null) {
+            //i = 0 lo modificamos por i = 1 ya que este algoritmo inicia en el segundo elemento
+            for (int i = 1; i < datosParaClasificar.length; i++) {
+                int j = i - 1;
+                // esta al reves datosParaClasificar[j + 1] > datosParaClasificar[j] por datosParaClasificar[j] > datosParaClasificar[j + 1]
+                while ((j >= 0) && (datosParaClasificar[j] > datosParaClasificar[j + 1])) {
+                    intercambiar(datosParaClasificar, j, j + 1);
+                    j--;
+                }
+            }
+            return datosParaClasificar;
+        }
+        return null;
+    }
+
+    private int[] ordenarPorBurbuja(int[] datosParaClasificar) {
+        // deshabilito la linea 88 no deberia estar
+        //datosParaClasificar = null;
+        int n = datosParaClasificar.length - 1;
+        for (int i = 0; i <= n; i++) {
+            for (int j = n; j >= (i + 1); j--) {
+                if (datosParaClasificar[j] < datosParaClasificar[j - 1]) {
+                    intercambiar(datosParaClasificar, j - 1, j);
+                }
+            }
+        }
+        return datosParaClasificar;
+    }
+
+    public boolean estaOrdenado(int[] vector) {
+        boolean res = true;
+        //recorro el vector
+        for (int i = 0; i < vector.length - 1; i++) {
+            //si algun elemento es mayor al siguiente entonces no esta ordenada, seteo res en false y break.
+            if (vector[i] > vector[i + 1]) {
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
+
+    public int encuentraPivote(int i, int j, int[] vector) {
+        return vector[(i + j) / 2];
+    }
+
+    int particion(int[] vector, int left, int right) {
         int i = left, j = right;
         int aux;
         int pivote = encuentraPivote(i, j, vector);
         //int pivote = vector[(left + right) / 2];
         while (i <= j) {
-            while (vector[i] < pivote) i++;
-            while (vector[j] > pivote) j--;
+            while (vector[i] < pivote) {
+                i++;
+            }
+            while (vector[j] > pivote) {
+                j--;
+            }
             if (i <= j) {
                 aux = vector[i];
                 vector[i] = vector[j];
                 vector[j] = aux;
-                i++; j--;
+                i++;
+                j--;
             }
-      }
-      return i;
+        }
+        return i;
     }
- 
+
     private int[] ordenarPorQuickSort(int[] arr, int left, int right) {
         int index = particion(arr, left, right);
-        if (left < index-1) ordenarPorQuickSort(arr, left, index - 1);
-        if (index < right ) ordenarPorQuickSort(arr, index, right);
+        if (left < index - 1) {
+            ordenarPorQuickSort(arr, left, index - 1);
+        }
+        if (index < right) {
+            ordenarPorQuickSort(arr, index, right);
+        }
         return arr;
     }
-    
-    
+
     public int[] ordenarPorHeapSort(int[] datosParaClasificar) {
         for (int i = (datosParaClasificar.length - 1) / 2; i >= 0; i--) { //Armo el heap inicial de n-1 div 2 hasta 0
             armaHeap(datosParaClasificar, i, datosParaClasificar.length - 1);
@@ -189,107 +193,87 @@ public class TClasificador {
                 }
             }
         }
-        }
+    }
 
-	
-    
-    public void tiempos(){
+    public void tiempos() {
         GeneradorDatosGenericos gdg1 = new GeneradorDatosGenericos();
         int[] vectorAleatorio = gdg1.generarDatosAleatorios();
         long t1 = System.nanoTime();
         long total = 0;
         int cantLlamadas = 0;
         while (total < 1000000000.0) {
-            cantLlamadas ++; 
-            int [] datosCopia = vectorAleatorio.clone();
+            cantLlamadas++;
+            int[] datosCopia = vectorAleatorio.clone();
             this.clasificar(datosCopia, METODO_CLASIFICACION_QUICK);
             long t2 = System.nanoTime();
             total = t2 - t1;
         }
-        long tiempoMedioAlgoritmoBase = total/cantLlamadas;
-        int [] vectorAleatorio2 = gdg1.generarDatosAleatorios();
+        long tiempoMedioAlgoritmoBase = total / cantLlamadas;
+        int[] vectorAleatorio2 = gdg1.generarDatosAleatorios();
         long t3 = System.nanoTime();
         long total2 = 0;
         int cantLlamadas2 = 0;
         while (total2 < 10) {
-            cantLlamadas2 ++; 
-            int [] datosCopia = vectorAleatorio.clone();
+            cantLlamadas2++;
+            int[] datosCopia = vectorAleatorio.clone();
             this.clasificar(datosCopia, METODO_CLASIFICACION_QUICK);
             long t2 = System.nanoTime();
             total = t2 - t1;
         }
-        long tiempoMedioCascara= total2/cantLlamadas2;
+        long tiempoMedioCascara = total2 / cantLlamadas2;
         //long tiempoMedioAlgoritmo = tiempoMedioAlgoritmoBase – tiempoMedioCascara;
-    
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
-	
-public static void main(String args[]) {
-            
-            
-            //Ejercicio 2 Parte 1
-            int [] vector = new int[5];
-            vector[0] = 10;
-            vector[1] = 1;
-            vector[2] = 4;
-            vector[3] = 3;
-            vector[4] = 9;
-            
-            
-            TClasificador clas = new TClasificador();
-            int metodo=METODO_CLASIFICACION_HEAP;
-           
-            
-            int [] aux = clas.clasificar(vector, METODO_CLASIFICACION_HEAP);
-            System.out.println("HEAP Ordenado");
-             for (int i = 0; i < aux.length; i++) {
-		System.out.print(aux[i] + " ");
-            }
-            System.out.println();GeneradorDatosGenericos gdg = new GeneradorDatosGenericos();
-            int[] vectorAleatorio = gdg.generarDatosAleatorios();
-            int[] vectorAscendente = gdg.generarDatosAscendentes();
-            int[] vectorDescendente = gdg.generarDatosDescendentes();
-           
-           System.out.println("HeapSort Aleatorio");
-           
-           long inicioAleatorio = System.nanoTime();
-           int[] resInsercion = clas.clasificar(vectorAleatorio, metodo);
-           long finAleatorio = System.nanoTime();
-           System.out.println("El tiempo es: " + (finAleatorio - inicioAleatorio));
-           System.out.println("--------------------------------------------");
-          
-            
-           System.out.println("HeapSort Ascendente");
-           
-           long inicioAscendente = System.nanoTime();
-           int[] resInsercionn = clas.clasificar(vectorAscendente, metodo);
-           long finAscendente = System.nanoTime();
-           System.out.println("El tiempo es: " + (finAscendente - inicioAscendente));
-           System.out.println("--------------------------------------------");
-      
-            
-           System.out.println("HeapSort Descendente");
-    
-           long inicioDescendente = System.nanoTime();
-           int[] resInsercionDes = clas.clasificar(vectorDescendente, metodo);
-           long finDescendente = System.nanoTime();
-           System.out.println("El tiempo es: " + (finDescendente - inicioDescendente));
-           System.out.println("--------------------------------------------");
-   
-            
-            
-            
-            
-             /*
+    }
+
+    public static void main(String args[]) {
+
+        //Ejercicio 2 Parte 1
+        int[] vector = new int[5];
+        vector[0] = 10;
+        vector[1] = 1;
+        vector[2] = 4;
+        vector[3] = 3;
+        vector[4] = 9;
+
+        TClasificador clas = new TClasificador();
+        int metodo = METODO_CLASIFICACION_HEAP;
+
+        int[] aux = clas.clasificar(vector, METODO_CLASIFICACION_HEAP);
+        System.out.println("HEAP Ordenado");
+        for (int i = 0; i < aux.length; i++) {
+            System.out.print(aux[i] + " ");
+        }
+        System.out.println();
+        GeneradorDatosGenericos gdg = new GeneradorDatosGenericos();
+        int[] vectorAleatorio = gdg.generarDatosAleatorios();
+        int[] vectorAscendente = gdg.generarDatosAscendentes();
+        int[] vectorDescendente = gdg.generarDatosDescendentes();
+
+        System.out.println("HeapSort Aleatorio");
+
+        long inicioAleatorio = System.nanoTime();
+        int[] resInsercion = clas.clasificar(vectorAleatorio, metodo);
+        long finAleatorio = System.nanoTime();
+        System.out.println("El tiempo es: " + (finAleatorio - inicioAleatorio));
+        System.out.println("--------------------------------------------");
+
+        System.out.println("HeapSort Ascendente");
+
+        long inicioAscendente = System.nanoTime();
+        int[] resInsercionn = clas.clasificar(vectorAscendente, metodo);
+        long finAscendente = System.nanoTime();
+        System.out.println("El tiempo es: " + (finAscendente - inicioAscendente));
+        System.out.println("--------------------------------------------");
+
+        System.out.println("HeapSort Descendente");
+
+        long inicioDescendente = System.nanoTime();
+        int[] resInsercionDes = clas.clasificar(vectorDescendente, metodo);
+        long finDescendente = System.nanoTime();
+        System.out.println("El tiempo es: " + (finDescendente - inicioDescendente));
+        System.out.println("--------------------------------------------");
+
+        /*
             //Ejercicio 2 Parte 2
             TClasificador clasif = new TClasificador();
             int metodo=METODO_CLASIFICACION_QUICK;
@@ -376,7 +360,6 @@ public static void main(String args[]) {
             System.out.println(finDescendente - inicioDescendente);
             //Ejercicio 2 Parte 8
             //ShellSort*/
-            
-	}
+    }
 
 }

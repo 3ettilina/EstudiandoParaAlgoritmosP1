@@ -278,8 +278,7 @@ public class TGrafoDirigido implements IGrafoDirigido {
     
     
     @Override
-    public boolean tieneCiclo(){
-        
+    public boolean tieneCiclo(){   
         if(vertices.isEmpty()){
             return false;
         }
@@ -289,15 +288,10 @@ public class TGrafoDirigido implements IGrafoDirigido {
                 if (!vertice.getVisitado() == false){
                     if(vertice.tieneCiclo(camino)){
                         return true;
-                        
                     }
                 }
-                            
-    
             }
             return false;  
         }
     }
-
-    
 }

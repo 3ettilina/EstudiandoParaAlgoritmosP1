@@ -131,8 +131,7 @@ public class TVertice implements IVertice {
             
         }
   
-  public boolean tieneCiclo(TCamino camino)
-  {
+  public boolean tieneCiclo(TCamino camino){
       boolean x=false;
       this.setVisitado(true);
       for (TAdyacencia adyacente : adyacentes) {
@@ -155,8 +154,6 @@ public class TVertice implements IVertice {
           camino.eliminarAdyacencia(adyacente);
           
       }
-      
       return x;
-  }
-  
+  } 
 }
