@@ -371,13 +371,14 @@ public class TClasificador {
 
     public int[] ordenarPorBinSort(int[] datosParaClasificar) {
         int cantidadUrnas = 10;
+        int cifrasMax = 3;
         ArrayList<LinkedList> urnas = new ArrayList<>(cantidadUrnas);
         for (int i = 0; i < cantidadUrnas; i++) {
             urnas.add(new LinkedList());
         }
         for (int i = 0; i < datosParaClasificar.length; i++) {
             int clave = datosParaClasificar[i];
-            int dms = this.DMS(clave);
+            int dms = this.DMS(clave,cifrasMax);
             LinkedList urna = urnas.get(dms);
             urna.add(clave);
         }
@@ -394,10 +395,10 @@ public class TClasificador {
         return datosParaClasificar;
     }
 
-    public int DMS(int numero) {
+    public int DMS(int numero,int cifras) {
         String n = numero + "";
         String dms = "0";
-        if (n.length() > 2) {
+        if (n.length() > cifras-1) {
             dms = n.charAt(0) + "";
         }
 
