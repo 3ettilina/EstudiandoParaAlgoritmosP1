@@ -69,7 +69,7 @@ public class TClasificadorTest {
      */
     @Test
     public void testOrdenarPorHeapsort() {
-//        Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.ordenarPorHeapsort(elementosOrdenadosAleatoriamente));
+        Assert.assertArrayEquals(elementosOrdenadosAscendentemente, clasificador.ordenarPorHeapsort(elementosOrdenadosAleatoriamente));
     }
 
     /**

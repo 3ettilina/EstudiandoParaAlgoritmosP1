@@ -254,12 +254,12 @@ public class TClasificador {
                     r = ultimo;
                 } else { //r tiene 2 hijos
                     int posicionIntercambio = 0;
-                    if (datosParaClasificar[2 * r] > datosParaClasificar[2 * r + 1]) {
+                    if (datosParaClasificar[2 * r] < datosParaClasificar[2 * r + 1]) {
                         posicionIntercambio = 2 * r + 1;
                     } else {
                         posicionIntercambio = 2 * r;
                     }
-                    if (datosParaClasificar[r] > datosParaClasificar[posicionIntercambio]) {
+                    if (datosParaClasificar[r] < datosParaClasificar[posicionIntercambio]) {
                         intercambiar(datosParaClasificar, r, posicionIntercambio);
                         r = posicionIntercambio;
                     } else {
