@@ -397,7 +397,7 @@ public class TClasificador {
     public int DMS(int numero) {
         String n = numero + "";
         String dms = "0";
-        if (n.length() > 1) {
+        if (n.length() > 2) {
             dms = n.charAt(0) + "";
         }
 

@@ -29,8 +29,8 @@ public class TClasificadorTest {
 
     @Before
     public void setUp() {
-        elementosOrdenadosAscendentemente = gdg.generarDatosAscendentes(100);
-        elementosOrdenadosAleatoriamente = gdg.generarDatosAleatorios(100);
+        elementosOrdenadosAscendentemente = gdg.generarDatosAscendentes(1000);
+        elementosOrdenadosAleatoriamente = gdg.generarDatosAleatorios(1000);
         elementosEspeciales = gdg.generarDatosEspeciales();
     }
 
